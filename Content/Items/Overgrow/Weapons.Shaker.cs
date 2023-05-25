@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Overgrow
@@ -84,7 +85,7 @@ namespace StarlightRiver.Content.Items.Overgrow
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips.FirstOrDefault(tooltip => tooltip.Name == "Speed" && tooltip.Mod == "Terraria").Text = "Snail Speed";
+			tooltips.FirstOrDefault(tooltip => tooltip.Name == "Speed" && tooltip.Mod == "Terraria").Text = Language.GetTextValue("Mods.StarlightRiver.Items.Shaker.SpeedTooltip");
 		}
 	}
 

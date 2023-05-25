@@ -1,4 +1,6 @@
-﻿namespace StarlightRiver.Core.Systems.BossRushSystem
+﻿using Terraria.Localization;
+
+namespace StarlightRiver.Core.Systems.BossRushSystem
 {
 	internal class HushArmorSystem : ModSystem
 	{
@@ -30,16 +32,16 @@
 				if (!StarlightRiver.debugMode)
 					return;
 
-				Main.NewText("=====================================================", new Color(200, 200, 200));
-				Main.NewText("Adapative damage resistance stats:");
-				Main.NewText("Current resistance: " + resistance);
-				Main.NewText("Perfect resistance: " + DPSTarget / thisDPS, new Color(200, 255, 255));
-				Main.NewText("unadjusted DPS estimate: " + thisDPS, new Color(255, 200, 200));
-				Main.NewText("adjusted DPS estimate: " + thisDPS * resistance, new Color(255, 225, 200));
-				Main.NewText("DPS target: " + DPSTarget, new Color(255, 255, 200));
-				Main.NewText("Current boss: " + BossRushSystem.trackedBossType, new Color(225, 255, 200));
-				Main.NewText("Current stage: " + BossRushSystem.currentStage, new Color(200, 255, 200));
-				Main.NewText("=====================================================", new Color(200, 200, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.Separate"), new Color(200, 200, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.AdapativeDamage"));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.CurrentResistance") + resistance);
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.PerfectResistance") + DPSTarget / thisDPS, new Color(200, 255, 255));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.UnadjustedDPS") + thisDPS, new Color(255, 200, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.AdjustedDPS") + thisDPS * resistance, new Color(255, 225, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.DPSTarget") + DPSTarget, new Color(255, 255, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.CurrentBoss") + BossRushSystem.trackedBossType, new Color(225, 255, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.CurrentTtage") + BossRushSystem.currentStage, new Color(200, 255, 200));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.Separate"), new Color(200, 200, 200));
 			}
 		}
 	}

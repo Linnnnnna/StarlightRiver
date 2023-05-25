@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Items.Brewing;
 using Terraria.ID;
+using Terraria.Localization;
 
 using static Terraria.ModLoader.ModContent;
 
@@ -70,7 +71,7 @@ namespace StarlightRiver.Content.Items.ForestIvy
 		// TODO: Forest ivy armor setbonus
 		public override void UpdateArmorSet(Player Player)
 		{
-			Player.setBonus = "After 5 seconds of not taking damage, your next attack will ensnare and cause bleeding.";
+			Player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.ForestIvy");
 			/*StarlightPlayer starlightPlayer = Player.GetModPlayer<StarlightPlayer>();
             starlightPlayer.ivyArmorComplete = true;*/
 		}

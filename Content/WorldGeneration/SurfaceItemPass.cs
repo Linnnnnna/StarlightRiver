@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Core
@@ -12,7 +13,7 @@ namespace StarlightRiver.Core
 	{
 		private void SurfaceItemPass(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Placing treasures";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.Surface");
 			//Seaglass ring
 			PlaceSeaglassRing(0, 500);
 			PlaceSeaglassRing(Main.maxTilesX - 500, Main.maxTilesX);

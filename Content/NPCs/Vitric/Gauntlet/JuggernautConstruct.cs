@@ -5,6 +5,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Vitric.Gauntlet
@@ -358,7 +359,7 @@ namespace StarlightRiver.Content.NPCs.Vitric.Gauntlet
 		{
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
 				Bestiary.SLRSpawnConditions.VitricDesert,
-				new FlavorTextBestiaryInfoElement("One of the Glassweaver's constructs. This sturdy brute will often use its allies as projectiles when out of smashing range.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.JuggernautConstruct"))
 			});
 		}
 	}

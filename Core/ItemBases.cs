@@ -1,6 +1,7 @@
 ﻿using StarlightRiver.Helpers;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core
 {
@@ -171,7 +172,7 @@ namespace StarlightRiver.Core
 	public class QuickBannerItem : QuickTileItem
 	{
 		public QuickBannerItem(string placetype, string NPCDisplayName, string texturePath = null, int rare = ItemRarityID.Blue, int ItemValue = 1000) : //todo maybe: bool for tooltip
-			base(NPCDisplayName + " BannerItem", NPCDisplayName + " Banner", "Nearby Players get a bonus against: " + NPCDisplayName, placetype, rare, texturePath, false, ItemValue)
+			base(NPCDisplayName + " BannerItem", NPCDisplayName + Language.GetTextValue("Mods.StarlightRiver.Common.Banner"), Language.GetTextValue("Mods.StarlightRiver.Common.BannerTip") + NPCDisplayName, placetype, rare, texturePath, false, ItemValue)
 		{ }
 
 		public override void SetDefaults()

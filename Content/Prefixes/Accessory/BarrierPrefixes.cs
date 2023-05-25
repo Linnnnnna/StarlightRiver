@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Core.Systems.BarrierSystem;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Prefixes.Accessory
 {
@@ -50,7 +51,7 @@ namespace StarlightRiver.Content.Prefixes.Accessory
 	}
 
 	internal class LayeredPrefix : BarrierPrefix
-	{
+	{//TODO 我不知道
 		public LayeredPrefix() : base(4, "Layered", "+4 Barrier") { }
 	}
 

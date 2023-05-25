@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Misc
@@ -35,8 +36,8 @@ namespace StarlightRiver.Content.Items.Misc
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips.FirstOrDefault(n => n.Name == "Damage").Text = "Deals 25% bow damage";
-			tooltips.FirstOrDefault(n => n.Name == "CritChance").Text = "Cannot critically strike";
+			tooltips.FirstOrDefault(n => n.Name == "Damage").Text = Language.GetTextValue("Mods.StarlightRiver.Items.ElectroArrow.DamageTooltip");
+			tooltips.FirstOrDefault(n => n.Name == "CritChance").Text = Language.GetTextValue("Mods.StarlightRiver.Items.ElectroArrow.CritChanceTooltip");
 		}
 
 		public override void AddRecipes()

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Terraria.GameContent.Bestiary;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Vitric
@@ -49,7 +50,7 @@ namespace StarlightRiver.Content.NPCs.Vitric
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				Bestiary.SLRSpawnConditions.VitricDesert,
-				new FlavorTextBestiaryInfoElement("[PH] Entry")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.KettleCreature"))
 			});
 		}
 

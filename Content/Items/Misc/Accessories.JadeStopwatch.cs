@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.ModLoader.IO;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Misc
 {
@@ -34,7 +35,7 @@ namespace StarlightRiver.Content.Items.Misc
 			int sin = (int)(Math.Sin(Main.GameUpdateCount * 0.1f) * 50);
 			tooltips.FirstOrDefault(n => n.Name == "ItemName").OverrideColor = new Color(50 + sin, 255, 150 + sin);
 
-			var featLine = new TooltipLine(Mod, "StopwatchMark", $"Obtained by beating {feat} in {time}")
+			var featLine = new TooltipLine(Mod, "StopwatchMark", Language.GetTextValue("Mods.StarlightRiver.Items.JadeStopwatch.JadeStopwatchMarkTooltip", feat, time))
 			{
 				OverrideColor = new Color(250 + sin, 200 + sin, 100 + sin)
 			};

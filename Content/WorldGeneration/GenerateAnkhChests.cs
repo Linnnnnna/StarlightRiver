@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core
 {
@@ -8,7 +9,7 @@ namespace StarlightRiver.Core
 	{
 		private void AnkhChestPass(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Hiding ancient secrets";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.AnkhChest");
 
 			int tries = 0;
 

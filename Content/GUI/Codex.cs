@@ -8,6 +8,7 @@ using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -41,11 +42,11 @@ namespace StarlightRiver.Content.GUI
 			AddElement(Back, Main.screenWidth / 2 - 250, Main.screenHeight / 2 - 225, 500, 500, this);
 			Back.OnScrollWheel += ScrollEntry;
 
-			AddElement(new CategoryButton(CodexEntry.Categories.Abilities, "Abilities"), 30, 10, 50, 28, Back);
-			AddElement(new CategoryButton(CodexEntry.Categories.Biomes, "Biomes"), 90, 10, 50, 28, Back);
-			AddElement(new CategoryButton(CodexEntry.Categories.Crafting, "Crafting"), 150, 10, 50, 28, Back);
-			AddElement(new CategoryButton(CodexEntry.Categories.Relics, "Relics"), 210, 10, 50, 28, Back);
-			AddElement(new CategoryButton(CodexEntry.Categories.Misc, "Misc"), 270, 10, 50, 28, Back);
+			AddElement(new CategoryButton(CodexEntry.Categories.Abilities, Language.GetTextValue("Mods.StarlightRiver.Common.CategoryText.Abilities")), 30, 10, 50, 28, Back);
+			AddElement(new CategoryButton(CodexEntry.Categories.Biomes, Language.GetTextValue("Mods.StarlightRiver.Common.CategoryText.Biomes")), 90, 10, 50, 28, Back);
+			AddElement(new CategoryButton(CodexEntry.Categories.Crafting, Language.GetTextValue("Mods.StarlightRiver.Common.CategoryText.Crafting")), 150, 10, 50, 28, Back);
+			AddElement(new CategoryButton(CodexEntry.Categories.Relics, Language.GetTextValue("Mods.StarlightRiver.Common.CategoryText.Relics")), 210, 10, 50, 28, Back);
+			AddElement(new CategoryButton(CodexEntry.Categories.Misc, Language.GetTextValue("Mods.StarlightRiver.Common.CategoryText.Misc")), 270, 10, 50, 28, Back);
 
 			AddElement(EntryBack, 330, 52, 120, 410, Back);
 			AddElement(ClickableEntries, 0, 0, 120, 390, EntryBack);
@@ -97,7 +98,7 @@ namespace StarlightRiver.Content.GUI
 
 				if (BookButton.IsMouseHovering)
 				{
-					Utils.DrawBorderString(spriteBatch, Player.CodexState == 0 ? "Found in the desert..." : "Starlight Codex", Main.MouseScreen + Vector2.One * 16, Main.MouseTextColorReal, 0.95f);
+					Utils.DrawBorderString(spriteBatch, Player.CodexState == 0 ? Language.GetTextValue("Mods.StarlightRiver.Common.Codex.Abilities.StarlightCodexHint") : Language.GetTextValue("Mods.StarlightRiver.Common.Codex.Abilities.StarlightCodexTitle"), Main.MouseScreen + Vector2.One * 16, Main.MouseTextColorReal, 0.95f);
 					Main.LocalPlayer.mouseInterface = true;
 				}
 			}

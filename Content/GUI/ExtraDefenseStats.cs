@@ -5,6 +5,7 @@ using Terraria.GameContent;
 using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.GUI
 {
@@ -65,7 +66,7 @@ namespace StarlightRiver.Content.GUI
 
 				int resistPercent = (int)Math.Round(ResistPlayer.DoTResist * 100, MidpointRounding.AwayFromZero);
 				DoTResistPanel.value = $"{resistPercent}%";
-				Main.hoverItemName += $"\n{resistPercent}% Inoculation";
+				Main.hoverItemName += Language.GetTextValue("Mods.StarlightRiver.Common.GUI.ExtraDefenseStats", resistPercent);
 			}
 			else if (Timer > 0)
 			{

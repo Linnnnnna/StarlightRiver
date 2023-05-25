@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Moonstone
@@ -99,7 +100,7 @@ namespace StarlightRiver.Content.Items.Moonstone
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Accumulate lunar energy by dealing melee damage\ndouble tap DOWN to summon the legendary spear Datsuzei\nDatsuzei consumes lunar energy and dissapears at zero";
+			player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.Moonstone");
 
 			if (moonCharge > 720)
 				moonCharge = 720;
@@ -199,7 +200,7 @@ namespace StarlightRiver.Content.Items.Moonstone
 			{
 				if (!Player.controlUp)
 				{
-					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", "hold UP for Datsuzei stats")
+					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", Language.GetTextValue("Mods.StarlightRiver.Common.MoonstoneDatsuzeiStats"))
 					{
 						OverrideColor = new Color(200, 200, 200)
 					};
@@ -280,7 +281,7 @@ namespace StarlightRiver.Content.Items.Moonstone
 			{
 				if (!Player.controlUp)
 				{
-					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", "hold UP for Datsuzei stats")
+					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", Language.GetTextValue("Mods.StarlightRiver.Common.MoonstoneDatsuzeiStats"))
 					{
 						OverrideColor = new Color(200, 200, 200)
 					};
@@ -337,7 +338,7 @@ namespace StarlightRiver.Content.Items.Moonstone
 			{
 				if (!Player.controlUp)
 				{
-					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", "hold UP for Datsuzei stats")
+					var spearQuery = new TooltipLine(Mod, "StarlightRiver:ArmorSpearQuery", Language.GetTextValue("Mods.StarlightRiver.Common.MoonstoneDatsuzeiStats"))
 					{
 						OverrideColor = new Color(200, 200, 200)
 					};

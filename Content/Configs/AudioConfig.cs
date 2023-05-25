@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Configs
 {
@@ -13,10 +14,10 @@ namespace StarlightRiver.Content.Configs
 	public class AudioConfig : ModConfig
 	{
 		public override ConfigScope Mode => ConfigScope.ClientSide;
-
-		[Label("Custom Inventory Sounds")]
+//TODO 无法正常显示
+		[Label("$Mods.StarlightRiver.Configs.AudioConfig.Label")]
 		[DrawTicks]
-		[Tooltip("If custom inventory sounds should play for all Items, select few, or none.")]
+		[Tooltip("$Mods.StarlightRiver.Configs.AudioConfig.Tooltip")]
 		[DefaultValue(typeof(CustomSounds), "All")]
 		public CustomSounds InvSounds = CustomSounds.All;
 	}

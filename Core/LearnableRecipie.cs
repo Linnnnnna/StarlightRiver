@@ -29,7 +29,7 @@ namespace StarlightRiver.Core
 			if (!knownRecipies.Contains(key))
 			{
 				knownRecipies.Add(key);
-				CombatText.NewText(Main.LocalPlayer.Hitbox, Color.Tan, "Learned Recipie: " + key);
+				CombatText.NewText(Main.LocalPlayer.Hitbox, Color.Tan, Language.GetTextValue("Mods.StarlightRiver.Common.LearnedRecipie") + key);
 			}
 		}
 

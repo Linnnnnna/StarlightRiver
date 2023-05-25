@@ -5,6 +5,7 @@ using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader.Utilities;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Misc
@@ -77,7 +78,7 @@ namespace StarlightRiver.Content.NPCs.Misc
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-				new FlavorTextBestiaryInfoElement("They call it... The fogbinder. Appearing during thunderstorms, this being is very Spooky, Demented, Demonic, Hellish, and Evil.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.Fogbinder"))
 			});
 		}
 

@@ -1,6 +1,7 @@
 ﻿using StarlightRiver.Content.Abilities;
 using StarlightRiver.Helpers;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Vitric
@@ -67,7 +68,7 @@ namespace StarlightRiver.Content.Items.Vitric
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus = "Accumulate powerful glass shards over time\nDouble tap DOWN to load these shards into your bow\nShards fired from bows have high velocity and damage";
+			player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.Vitric");
 
 			if (player.whoAmI != Main.myPlayer)
 				return;

@@ -49,20 +49,20 @@ namespace StarlightRiver.Content.NPCs.Town
 
 		public override string GetChat()
 		{
-			return "No Text";
+			return Language.GetTextValue("Mods.StarlightRiver.NPCs.Voidsmith.GetChat");
 		}
 
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
 			button = Language.GetTextValue("LegacyInterface.28");
-			button2 = "Upgrades";
+			button2 = Language.GetTextValue("Mods.StarlightRiver.Voidsmith.Button2");
 		}
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shopName)
 		{
 			if (firstButton)
 			{
-				shopName = "Shop";
+				shopName = Language.GetTextValue("Mods.StarlightRiver.Voidsmith.Shop");
 			}
 			else
 			{

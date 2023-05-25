@@ -4,6 +4,7 @@ using System;
 using Terraria.DataStructures;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Geomancer
 {
@@ -123,10 +124,7 @@ namespace StarlightRiver.Content.Items.Geomancer
 
 		public override void UpdateArmorSet(Player Player)
 		{
-			Player.setBonus = "Kills ands critical strikes have a chance to drop magic gems\n" +
-			"Each gem activates a different effect when picked up\n" +
-			"Obtaining another gem stores the previous effect\n" +
-			"Collecting all breifly activates every effect at once";
+			Player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.Geomancer");
 
 			Player.GetModPlayer<GeomancerPlayer>().SetBonusActive = true;
 		}
@@ -244,7 +242,7 @@ namespace StarlightRiver.Content.Items.Geomancer
 			}
 			catch
 			{
-				Main.NewText("First wave of geomancer armor drawing not working");
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.GeomancerDoesntWork1"));
 			}
 
 			try
@@ -272,7 +270,7 @@ namespace StarlightRiver.Content.Items.Geomancer
 			}
 			catch
 			{
-				Main.NewText("Second wave of geomancer armor drawing not working");
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.GeomancerDoesntWork2"));
 			}
 		}
 	}

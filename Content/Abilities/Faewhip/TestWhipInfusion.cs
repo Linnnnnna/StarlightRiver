@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Abilities.Infusions;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Abilities.Faewhip
 {
@@ -65,7 +66,7 @@ namespace StarlightRiver.Content.Abilities.Faewhip
 
 		public override void SetDefaults()
 		{
-			objectives.Add(new InfusionObjective("Implement Objectives", 1));
+			objectives.Add(new InfusionObjective(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.ImplementObjectives"), 1));
 		}
 	}
 }

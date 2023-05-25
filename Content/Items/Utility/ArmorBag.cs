@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria.GameContent.UI;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader.IO;
 
 namespace StarlightRiver.Content.Items.Utility
@@ -113,30 +114,27 @@ namespace StarlightRiver.Content.Items.Utility
 				return;
 
 			var armorLineHead = new TooltipLine(Mod, "HelmetSlot",
-				storedArmor[0].IsAir ? "No helmet" : storedArmor[0].Name)
+				storedArmor[0].IsAir ? Language.GetTextValue("Mods.StarlightRiver.Items.ArmorBag.NoHelmet") : storedArmor[0].Name)
 			{
 				OverrideColor = storedArmor[0].IsAir ? new Color(150, 150, 150) : ItemRarity.GetColor(storedArmor[0].rare)
 			};
 			tooltips.Add(armorLineHead);
 
 			var armorLineChest = new TooltipLine(Mod, "ChestSlot",
-				storedArmor[1].IsAir ? "No chestplate" : storedArmor[1].Name)
+				storedArmor[1].IsAir ? Language.GetTextValue("Mods.StarlightRiver.Items.ArmorBag.NoChestplate") : storedArmor[1].Name)
 			{
 				OverrideColor = storedArmor[1].IsAir ? new Color(150, 150, 150) : ItemRarity.GetColor(storedArmor[1].rare)
 			};
 			tooltips.Add(armorLineChest);
 
 			var armorLineLegs = new TooltipLine(Mod, "LegsSlot",
-				storedArmor[2].IsAir ? "No leggings" : storedArmor[2].Name)
+				storedArmor[2].IsAir ? Language.GetTextValue("Mods.StarlightRiver.Items.ArmorBag.NoLeggings") : storedArmor[2].Name)
 			{
 				OverrideColor = storedArmor[2].IsAir ? new Color(150, 150, 150) : ItemRarity.GetColor(storedArmor[2].rare)
 			};
 			tooltips.Add(armorLineLegs);
 
-			var line = new TooltipLine(Mod, "Starlight",
-				"Right click to equip stored armor\n" +
-				"Right click with armor to add it to the bag\n" +
-				"Ctrl-Right click to empty the bag");
+			var line = new TooltipLine(Mod, "Starlight", Language.GetTextValue("Mods.StarlightRiver.Items.ArmorBag.MoreTooltip"));
 
 			tooltips.Add(line);
 		}

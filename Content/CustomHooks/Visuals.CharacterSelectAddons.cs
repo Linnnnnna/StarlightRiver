@@ -8,6 +8,7 @@ using System.Reflection;
 using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.IO;
+using Terraria.Localization;
 using Terraria.UI;
 
 namespace StarlightRiver.Content.CustomHooks
@@ -192,7 +193,7 @@ namespace StarlightRiver.Content.CustomHooks
 						string message = medal.ToString();
 
 						if (medal.difficulty == 2 && Main.time % 4800 > 2400)
-							message = "Deaths: " + mp3.GetDeaths(medal.name);
+							message = Language.GetTextValue("Mods.StarlightRiver.Common.CustomHooksText.CharacterSelectAddons") + mp3.GetDeaths(medal.name);
 
 						Utils.DrawBorderString(spriteBatch, message, origin + new Vector2(306, 70), Color.White);
 					}

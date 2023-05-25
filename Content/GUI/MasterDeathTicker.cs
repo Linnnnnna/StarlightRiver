@@ -1,6 +1,7 @@
 ﻿using StarlightRiver.Core.Loaders.UILoading;
 using System.Collections.Generic;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.GUI
 {
@@ -23,7 +24,7 @@ namespace StarlightRiver.Content.GUI
 			animationTimer++;
 
 			var pos = new Vector2(Main.screenWidth / 2, Main.screenHeight / 2 - 120);
-			string message = "Deaths to " + name + ": " + (animationTimer < 60 ? (deaths - 1) : deaths);
+			string message = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsTo") + (animationTimer < 60 ? (deaths - 1) : deaths);
 
 			Color color = new Color(255, 100, 100) * (animationTimer > 420 ? 1 - (animationTimer - 420) / 60f : 1);
 
@@ -48,25 +49,25 @@ namespace StarlightRiver.Content.GUI
 			tease = "";
 
 			if (deaths % 10 == 0)
-			{
-				tease = Main.rand.Next(14) switch
+			{//TODO 精简代码
+				tease = Main.rand.Next(14) switch 
 				{
-					0 => "Maybe try Journey Mode...",
-					1 => "You're not supposed to win.",
-					2 => "Whoopsie daisy.",
-					3 => "It's not THAT hard.",
-					4 => "Give up.",
-					5 => "Have you tried dodging?",
-					6 => "skill issue",
-					7 => "Are the logged hours on your Steam account accurate?",
-					8 => "You sure you wanna do this?",
-					9 => "There are easier difficulties you know.",
-					10 => "You can install Dragonlens from the mod browser.",
-					11 => "You can always come back after beating other bosses.",
-					12 => "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-					13 => "Just so you know, Starlight River does not have a pacifist route. Consider changing your playstyle.",
-					14 => "Press " + Main.cJump + " to jump.",
-					_ => "You died so many times you broke our snarky quote code. Great job.",
+					0 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.0"),
+					1 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.1"),
+					2 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.2"),
+					3 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.3"),
+					4 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.4"),
+					5 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.5"),
+					6 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.6"),
+					7 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.7"),
+					8 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.8"),
+					9 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.9"),
+					10 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.10"),
+					11 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.11"),
+					12 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.12"),
+					13 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.13"),
+					14 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.14"),
+					_ => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.15"),
 				};
 			}
 		}

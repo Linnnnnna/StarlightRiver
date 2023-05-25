@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core
 {
@@ -9,7 +10,7 @@ namespace StarlightRiver.Core
 	{
 		private void SeaSaltPass(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Adding Salt";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.SeaSalt");
 			PlaceSeaSalt(20, 400);
 			PlaceSeaSalt(Main.maxTilesX - 400, Main.maxTilesX - 20);
 		}

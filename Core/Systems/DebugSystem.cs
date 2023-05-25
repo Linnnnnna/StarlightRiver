@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core.Systems
 {
@@ -19,10 +20,7 @@ namespace StarlightRiver.Core.Systems
 			if (!StarlightRiver.debugMode || Main.playerInventory)
 				return;
 
-			string menu = "Debug mode options:\n " +
-				"Y: Hold to speed up game\n " +
-				"U: Hold to slow down game\n " +
-				"P: Press to change difficulty";
+			string menu = Language.GetTextValue("Mods.StarlightRiver.Common.System.DebugText.Menu");
 
 			Main.spriteBatch.Begin();
 			Utils.DrawBorderString(Main.spriteBatch, menu, new Vector2(32, 120), new Color(230, 230, 255));
@@ -63,17 +61,17 @@ namespace StarlightRiver.Core.Systems
 				if (!Main.expertMode)
 				{
 					Main.GameMode = GameModeID.Expert;
-					Main.NewText("The game is now in expert mode.", new Color(255, 150, 0));
+					Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.DebugText.Expert"), new Color(255, 150, 0));
 				}
 				else if (!Main.masterMode)
 				{
 					Main.GameMode = GameModeID.Master;
-					Main.NewText("The game is now in master mode.", new Color(255, 0, 0));
+					Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.DebugText.Master"), new Color(255, 0, 0));
 				}
 				else
 				{
 					Main.GameMode = GameModeID.Normal;
-					Main.NewText("The game is now in normal mode.", new Color(180, 180, 255));
+					Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.System.DebugText.Normal"), new Color(180, 180, 255));
 				}
 			}
 

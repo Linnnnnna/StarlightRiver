@@ -44,7 +44,7 @@ namespace StarlightRiver.Content.Tiles.Herbology
 		public override void SetStaticDefaults()
 		{
 			Main.wallHouse[Type] = true;
-			ItemDrop = ModContent.ItemType<GreenhouseWallItem>();
+			// ItemDrop = ModContent.ItemType<GreenhouseWallItem>();
 		}
 	}
 

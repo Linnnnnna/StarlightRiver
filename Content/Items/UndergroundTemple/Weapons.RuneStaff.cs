@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.UndergroundTemple
@@ -66,7 +67,7 @@ namespace StarlightRiver.Content.Items.UndergroundTemple
 			ModItem item = base.Clone(newEntity);
 			(item as RuneStaff).charge = charge;
 
-			Main.NewText("Cloned new staff with a charge level of: " + (item as RuneStaff).charge);
+			Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Items.RuneStaff.CloneText") + (item as RuneStaff).charge);
 
 			return item;
 		}

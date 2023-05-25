@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using Terraria.Localization;
 using Terraria.UI.Chat;
 
 namespace StarlightRiver.Core.Systems.KeywordSystem
@@ -129,7 +130,7 @@ namespace StarlightRiver.Core.Systems.KeywordSystem
 			}
 
 			if (thisKeywords.Count > 0 && !Main.LocalPlayer.controlUp)
-				tooltips.Add(new TooltipLine(Mod, "KeywordInfo", "[c/AAAAAA:Press UP for more info]"));
+				tooltips.Add(new TooltipLine(Mod, "KeywordInfo", Language.GetTextValue("Mods.StarlightRiver.Common.KeywordInfo")));
 		}
 
 		public string ScanLine(string input)

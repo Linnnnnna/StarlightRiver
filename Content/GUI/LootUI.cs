@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.ID;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -24,17 +25,18 @@ namespace StarlightRiver.Content.GUI
 
 		public override void OnInitialize()
 		{
-			Quotes = new List<string>() //TODO somthing with localization
+			Quotes = new List<string>() //TODO somthing with localization 修复文本问题
             {
-				"Loot?",
-				"Loot!",
-				"Shiny treasures!",
-				"Shinies!",
-				"Treasure!",
-				"For your troubles...",
-				"This looks valuable...",
-				"Not a mimic!",
-				"Shiny!"
+				Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.LootQuotes.{Quotes}")
+				//"Loot?",
+				//"Loot!",
+				//"Shiny treasures!",
+				//"Shinies!",
+				//"Treasure!",
+				//"For your troubles...",
+				//"This looks valuable...",
+				//"Not a mimic!",
+				//"Shiny!"
 			};
 		}
 
@@ -70,8 +72,8 @@ namespace StarlightRiver.Content.GUI
 
 			Utils.DrawBorderStringBig(spriteBatch, Quotes[QuoteID], GetDimensions().Center() + new Vector2(0, -80) - 1.5f * Terraria.GameContent.FontAssets.ItemStack.Value.MeasureString(Quotes[QuoteID]) / 2, Color.White, 0.5f);
 
-			string str = "You get:";
-			string str2 = "Pick two:";
+			string str = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.Get");
+			string str2 = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.Pick");
 
 			Utils.DrawBorderString(spriteBatch, str, GetDimensions().Center() + new Vector2(0, -40) - Terraria.GameContent.FontAssets.ItemStack.Value.MeasureString(str) / 2, Color.White, 0.8f);
 			Utils.DrawBorderString(spriteBatch, str2, GetDimensions().Center() + new Vector2(0, 40) - Terraria.GameContent.FontAssets.ItemStack.Value.MeasureString(str2) / 2, Color.White, 0.8f);

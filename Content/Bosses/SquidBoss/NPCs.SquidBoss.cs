@@ -10,6 +10,7 @@ using System.Linq;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Bosses.SquidBoss
@@ -135,7 +136,7 @@ namespace StarlightRiver.Content.Bosses.SquidBoss
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				Bestiary.SLRSpawnConditions.AuroraSquid,
-				new FlavorTextBestiaryInfoElement("An aquatic titan that stalks the impossibly cold waters behind its temple, channeling the light of the aurora into powerful magic to hunt its prey.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.SquidBoss"))
 			});
 		}
 

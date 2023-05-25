@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Abilities;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Prefixes.Accessory
 {
@@ -50,7 +51,7 @@ namespace StarlightRiver.Content.Prefixes.Accessory
 	}
 
 	internal class StaminaPrefix1 : StaminaPrefix
-	{
+	{//TODO 我不知道
 		public StaminaPrefix1() : base(2, "Springy", "+2 stamina regeneration") { }
 	}
 

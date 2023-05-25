@@ -1,6 +1,7 @@
 ﻿using StarlightRiver.Content.Abilities.Infusions;
 using System;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 {
@@ -134,7 +135,7 @@ namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 
 		public override void SetDefaults()
 		{
-			objectives.Add(new InfusionObjective("Implement Objectives", 1));
+			objectives.Add(new InfusionObjective(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.ImplementObjectives"), 1));
 		}
 	}
 }

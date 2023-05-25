@@ -9,6 +9,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.WorldGen;
 
@@ -36,7 +37,7 @@ namespace StarlightRiver.Core
 		/// <param name="progress"></param>
 		public static void VitricGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Digging the Vitric Desert";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.Vitric");
 
 			int vitricHeight = 140;
 			ValidGround = new int[] { instance.Find<ModTile>("VitricSand").Type, instance.Find<ModTile>("VitricSoftSand").Type };
@@ -192,7 +193,7 @@ namespace StarlightRiver.Core
 				}
 			}
 
-			progress.Message = "Melting Glass";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.VitricGlass");
 
 			GenConsistentMiniIslands();
 			GenSandstonePillars();

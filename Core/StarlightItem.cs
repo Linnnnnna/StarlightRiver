@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Prefixes;
 using System.Collections.Generic;
+using Terraria.Localization;
 using Terraria.Utilities;
 
 namespace StarlightRiver.Core
@@ -82,7 +83,8 @@ namespace StarlightRiver.Core
 
 					mult += mp.AllCritMult;
 
-					line.Text = $"{(int)(Item.damage * mult)} critical strike damage";
+					int multtext = (int)(Item.damage * mult);
+					line.Text = Language.GetTextValue("Mods.StarlightRiver.Common.MultText", multtext);
 					line.OverrideColor = new Color(255, 200, 100);
 					tooltips.Insert(index + 1, line);
 				}
@@ -92,7 +94,7 @@ namespace StarlightRiver.Core
 
 			if (Item.useAmmo != 0)
 			{
-				var line = new TooltipLine(StarlightRiver.Instance, "AmmoInfo", "Uses:");
+				var line = new TooltipLine(StarlightRiver.Instance, "AmmoInfo", Language.GetTextValue("Mods.StarlightRiver.Common.User"));
 
 				TooltipLine critLine = tooltips.Find(n => n.Name == "Knockback");
 				int index = critLine is null ? tooltips.Count - 1 : tooltips.IndexOf(critLine);

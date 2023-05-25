@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Prefixes.Accessory
 {
@@ -49,7 +50,7 @@ namespace StarlightRiver.Content.Prefixes.Accessory
 	}
 
 	internal class DoTResistPrefix1 : DoTResistPrefix
-	{
+	{//TODO 我不知道
 		public DoTResistPrefix1() : base(0.02f, "Healthy", "+2% Inoculation") { }
 	}
 

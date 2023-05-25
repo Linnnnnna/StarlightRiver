@@ -7,6 +7,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Vitric
 {
@@ -69,7 +70,7 @@ namespace StarlightRiver.Content.Items.Vitric
 			TooltipLine damageLine = tooltips.FirstOrDefault(n => n.Name == "Damage");
 
 			if (damageLine != null)
-				tooltips.Insert(tooltips.IndexOf(damageLine) + 1, new TooltipLine(Mod, "ShieldLife", "50 shield life"));
+				tooltips.Insert(tooltips.IndexOf(damageLine) + 1, new TooltipLine(Mod, "ShieldLife", Language.GetTextValue("Mods.StarlightRiver.Items.FacetAndLattice.ShieldLife")));
 		}
 
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -397,7 +398,7 @@ namespace StarlightRiver.Content.Items.Vitric
 					}
 					else
 					{
-						CombatText.NewText(Projectile.Hitbox, new Color(100, 255, 255), "Cant block!");
+						CombatText.NewText(Projectile.Hitbox, new Color(100, 255, 255), Language.GetTextValue("Mods.StarlightRiver.Items.FacetAndLattice.CantBlock"));
 						proj.damage -= (int)ShieldLife / 2;
 						Projectile.Kill();
 						return;

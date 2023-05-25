@@ -1,8 +1,415 @@
 Mods: {
 	StarlightRiver: {
 		Keybinds: {
-			"Forbidden Winds.DisplayName": Mods.StarlightRiver.Keybinds.Forbidden Winds.DisplayName
-			Faeflame.DisplayName: Mods.StarlightRiver.Keybinds.Faeflame.DisplayName
+			ForbiddenWinds.DisplayName: Forbidden Winds
+			Faeflame.DisplayName: Faeflame
+		}
+
+		Configs: {
+			AudioConfig: {
+				Label: Custom Inventory Sounds
+				Tooltip: If custom inventory sounds should play for all Items, select few, or none.
+			}
+
+			GraphicsConfig: {
+				Label: {
+					Screenshake: Screenshake
+					LightingBufferPollRate: Lighting Buffer Poll Rate
+					ScrollingLightingBufferBuilding: Scrolling Lighting Buffer Building
+					ExtraParticles: Extra Particles
+					HighQualityLitTextures: High quality lit textures
+					BackgroundReflections: Background Reflections
+				}
+
+				Tooltip: {
+					Screenshake: Modifies the intensity of screen shake effects
+					LightingBufferPollRate:
+						'''
+						Changes how often the lighting buffer polls for data.
+						Higher values increase performance but make lighting update slower on some objects.
+						Lower values result in smoother moving light but may hurt performance.
+						'''
+					ScrollingLightingBufferBuilding:
+						'''
+						Causes the lighting buffer to be built over its poll rate instead of all at once.
+						May help normalize lag spikes but cause strange lighting artifacts.
+						'''
+					ExtraParticles:
+						'''
+						Enables/Disables special particles.
+						Disable this if you have performance issues.
+						'''
+					HighQualityLitTextures:
+						'''
+						Enables/Disables fancy lighting on large textures.
+						Disable this if you have performance issues.
+						'''
+					BackgroundReflections:
+						'''
+						Configures what is rendered for background reflections.
+						Disable this if you have performance issues.
+						'''
+				}
+			}
+
+			ReflectionSubConfig: {
+				Label: {
+					BackgroundReflections: Background Reflections
+					ReflectPlayers: Reflect Players
+					ReflectNPCs: Reflect NPCs
+					ReflectProjectiles: Reflect Projectiles
+					ReflectParticles: ReflectParticles
+				}
+
+				Tooltip: {
+					BackgroundReflections:
+						'''
+						This will Enable/Disable the background reflections system entirely.
+						If this is off, the other settings in this block are ignored.
+						Disable this if you have performance issues.
+						'''
+					ReflectPlayers:
+						'''
+						This will Enable/Disable reflecting Players.
+						low performance impact.
+						'''
+					ReflectNPCs:
+						'''
+						This will Enable/Disable reflecting NPCs.
+						low performance impact.
+						'''
+					ReflectProjectiles:
+						'''
+						This will Enable/Disable reflecting Projectiles.
+						high performance impact.
+						'''
+					ReflectParticles:
+						'''
+						This will Enable/Disable reflecting Particles, gores and dusts.
+						high performance impact.
+						'''
+				}
+			}
+
+			GUIConfig: {
+				Label: {
+					OverheadStaminaDisplay: Overhead Stamina Display
+					KeywordStyle: Keyword Style
+				}
+
+				Tooltip: {
+					OverheadStaminaDisplay: When/If the overhead stamina meter should display
+					KeywordStyle: How keywords should be displayed in tooltips
+				}
+			}
+
+			OverlayState: {
+				Tooltip: ""
+				AlwaysOn.Label: Always On
+				WhileNotFull.Label: While Not Full
+				WhileUsing.Label: While Using
+				Never.Label: Never
+			}
+
+			KeywordStyle: {
+				Tooltip: ""
+				Colors.Label: Colors
+				Brackets.Label: Brackets
+				Both.Label: Both
+				Neither.Label: Neither
+			}
+		}
+
+		Condition.TempleCondition: When killed inside the vitric forge
+
+		SLRSpawnConditions: {
+			VitricDesert: Vitric Desert
+			AuroraSquid: Aurora Temples
+			Moonstone: Moonstone Shard
+		}
+
+		Common: {
+			AmmoLineToolTip: Current Ammo: [i:{0}]{1}
+			Twice: "Twice "
+			CannotReforg: Cannot be reforged
+			On: On
+			Off: Off
+			Invalid: Invalid
+			The: " the "
+			NewEntry: "New Entry: "
+			GeomancerDoesntWork1: First wave of geomancer armor drawing not working
+			GeomancerDoesntWork2: Second wave of geomancer armor drawing not working
+			PoltergeistBored: Your haunted weapons seem bored...
+			MoonstoneDatsuzeiStats: hold UP for Datsuzei stats
+			GlassReplica: Replica {0}
+			GotOvergrowthKey: Got: Overgrowth Key
+			KeywordInfo: "[c/AAAAAA:Press UP for more info]"
+			Banner: " Banner"
+			BannerTip: "Nearby Players get a bonus against: "
+			LearnedRecipie: "Learned Recipie: "
+			Medalearned: Medal earned!
+			MultText: "{0} critical strike damage"
+			Uses: Uses:
+			WARNING: WARNING
+			WARNINGText:
+				'''
+				Starlight River has unique behavior for it's bosses in master mode. This behavior is intended to be immensely difficult over anything else, and assumes a high amount of knowldge about
+				both the mod and base game. Starlight River master mode is not intended for a first playthrough. Starlight River master mode is not intended to be fair. Starlight River master mode is not intended to be fun for everyone.
+				Please remember that the health, both physical and mental, of yourself and those around you is far more important than this game or anything inside of it.
+				'''
+
+			Ingredient: {
+				IngredientTypeMainDescription: Main Course
+				IngredientTypeSideDescription: Side Dish
+				IngredientTypeSeasoningDescription: Seasonings
+				IngredientTypeBonusDescription: Bonus Effects
+				IngredientTooltip: adds {0} seconds duration to food
+			}
+
+			Meal: {
+				BadFood: Bad food! Please report me to the Mod devs.
+				SidesNameWith: " with "
+				SidesNameAnd: " and "
+			}
+
+			CategoryText: {
+				Abilities: Abilities
+				Biomes: Biomes
+				Crafting: Crafting
+				Relics: Relics
+				Misc: Misc
+			}
+
+			SoilgunTooltipTextList: {
+				NormalTooltip: This item can be used as ammo for the Soilgun and Earthduster
+				VitricSandTooltip:
+					'''
+					When used with the Soilgun or Earthduster, it will fire out blocks of glassy sand, that cause crystals to grow out of enemies
+					For each crystal an enemy has, they take 2 damage per second, plus a base damage of 4, up to a maximum of 10 crystals
+					If an enemy has had 10 crystals on them for more than 4 seconds, all crystals become charged, exploding shorty after
+					'''
+				SandBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of sand that split into many grains of sand upon death
+				CrimsandBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of Crimsand that steal life from hit enemies
+				EbonsandBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of Ebonsand that apply stacks of Haunted to enemies
+				PearlsandBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of Pearlsand that home in on enemies
+				DirtBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of dirt
+				SiltBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of silt, that spawn coins upon hitting enemies
+				SlushBlockTooltip:
+					'''
+					When used with the Soilgun or Earthduster, it will fire out blocks of slush that cause hit enemies to have icicles impale them
+					Hitting and enemy with more than 10 icicles causes all icicles to shatter, causing large amounts of damage
+					'''
+				MudBlockTooltip: When used with the Soilgun or Earthduster, it will fire out blocks of mud that bounce off tiles and enemies
+			}
+
+			Codex: {
+				Abilities: {
+					StarlightCodexTitle: Starlight Codex
+					StarlightCodexBody: A mysterious compendium containing lost knowledge, it seems to write itself as you travel. Click the codex icon in your inventory to view the codex.
+					StarlightCodexHint: Found in the desert...
+					ForbiddenWindsBody: A collection of strange energies found deeep within a tomb buried in the vitric desert. These 'winds' hold the power to shatter certain objects on touch and propel you forward at great speeds.
+					ForbiddenWindsHint: Sealed away in an ancient glass temple
+				}
+
+				VitricEntryHint: Found beneath the underground desert...
+				StarlightWaterTitle: Starlight Bathing
+				StarlightWaterBody:
+					'''
+					You have discovered that if the stars that fall at night happen to fall into a body of water, they seem to disintegrate into a beautiful, shimmering light, which lingers on the water's surface. Submerging certain Items in this rather shiny water seems to alter them in strange ways, transforming things such as simple wooden tools into powerful magical instruments. NEWBLOCK 
+					It also seems that anything capable of undergoing this metamorphasis appears to glow brightly in your pockets when near these sparkling waters. Building on this, you think it may be a wise idea to occasionally visit these wells and check if anything you have can be transformed.
+					'''
+				PlaceholderRelicEntryTitle: Placeholder Entry
+				PlaceholderRelicEntryBody: Huh. Well this is awkward.
+				PlaceholderRelicEntryHint: Some things you just cant know in a demo...
+
+				Mics: {
+					StaminaEntryTitle: Stamina
+					StaminaEntryBody: All of your abilities utilize stamina, a resource represented by the orange diamonds next to your mana bar. Your stamina will replenish itself over time. You can gain additional stamina by unlocking new abilities and having certain equipment.
+					StaminaEntryHint: Unlock an ability...
+					StaminaShardEntryTitle: Stamina Vessels
+					StaminaShardEntryBody: Shards of these intricate metal devices seem to be scattered around the world everywhere. By combining 3 of them, a completed stamina vessel can be made, allowing it's holder to store an extra unit of stamina. Unfortunately, the strange material and intricate tooling of these fragments makes it nigh impossible to re-create them on your own.
+					StaminaShardEntryHint: Find a stamina vessel shard...
+					InfusionEntryTitle: Infusions
+					InfusionEntryBody:
+						'''
+						Infusions are powerful magical relics which can augment a user's abilities or change how they work altogether. Two main types of infusions exist, Generic Infusions and Ability Infusions. NEWBLOCK 
+						Generic Infusions typically provide a general boost that applied to all of the Player's abilities, or have small enough effects that they do not warrant the ability-type restriction of Ability Infusions. While you can equip as many Generic Infusions as you have slots, you cannot equip duplicates. NEWBLOCK 
+						Ability Infusions are specific to one of your abilities, and greatly augment them or change how they function alltogether. While powerful, these infusions are generally harder to come by than Generic Infusions. You cannot equip two Ability Infusions for the same ability, and you cannot equip duplicates.
+						'''
+					InfusionEntryHint: Find a mysterious altar...
+					BarrierEntryTitle: Barrier
+					BarrierEntryBody:
+						'''
+						Barrier acts as a way to wrap your body in magical energies, protecting it from physical harm. While not normally attainable, adventerers can wear magical accessories or armors that allow them to keep and accumulate barrier on themselves, or quaff potions which grant a brief period of fleeting barrier. NEWBLOCK 
+						While powerful, barrier is not capable of fully absorbing damage, normal barriers will only protect from about 30% of damage, while also taking the full brunt of the attack to itself. Barrier will also not protect it's user against all forms of bodily harm, ailments that directly affect it's bearer such as fire and poisions or magics which directly drain one's body such as chaos state will cause full harm, through any amount of barrier NEWBLOCK 
+						It should also be noted that barrier cannot accumulate on a being in pain, one must wait around 8 seconds after being harmed for their barrier to begin to recharge without the aid of potions or equipment to expediate the effect.
+						'''
+					IBarrierEntryHint: Use equipment or potions which grant barrier...
+				}
+			}
+
+			Infusion: {
+				Artifacts: Artifacts
+				ImprintedSlate: Imprinted slate: {0}
+				TransformNote: Complete objectives to transform into an infusion
+				InfusionComplete: Objectives Complete! You've obtained: {0}
+				ImplementObjectives: Implement Objectives
+				InvalidObjective: Invalid Objective
+				StrikeFoes: Strike Foes
+				LootFallenStars: Loot Fallen Stars
+			}
+
+			CustomHooksText: {
+				AstralMeteor: A shard of the moon has landed!
+
+				PrehardmodeWarning: {
+					Text1: Thank you for playing!
+					Text2: You've reached the current end of Starlight River. Hardmode content is planned and under development, follow us on social media for spoilers and future updates.
+				}
+
+				CharacterSelectAddons: "Deaths: "
+			}
+
+			GUI: {
+				BarrierDyeSlot: Barrier Tincture
+				TownButton: Locked
+
+				BossRushText: {
+					BossRush: Boss Rush
+					Score: Score: {0}
+					NoScore: No score!
+					Normal.Description:
+						'''
+						- Fight all Starlight River bosses in order! NEWBLOCK
+						- Normal difficulty NEWBLOCK
+						- Full heal between bosses
+						'''
+
+					Expert: {
+						Name: Boss blitz
+						Description:
+							'''
+							- Fight all Starlight River bosses in order! NEWBLOCK
+							- Expert difficulty NEWBLOCK
+							- Heal 200 life between bosses NEWBLOCK
+							- Game moves at 1.25x speed! NEWBLOCK
+							- 2x Score multiplier!
+							'''
+					}
+
+					Master: {
+						Name:
+							'''
+							Starlight
+							showdown
+							'''
+						Description:
+							'''
+							- Fight all Starlight River bosses in order! NEWBLOCK
+							- Master difficulty NEWBLOCK
+							- No healing between bosses NEWBLOCK
+							- Game moves at 1.5x speed! NEWBLOCK
+							- Healing potions disabled! NEWBLOCK
+							- Teleportation disabled! NEWBLOCK
+							- 3x Score multiplier!
+							'''
+					}
+				}
+
+				ChefBagUI: {
+					SortMode: Sort mode:
+					HideUnowned: Hide unowned:
+					Ingredients: Ingredients
+					Cookbook: Cookbook
+				}
+
+				CookingUI: {
+					CookText:
+						'''
+						Place a Main Course in
+						the top slot to start
+						cooking
+						'''
+					CookTimeDuration: " seconds duration"
+					CookTimeFullness: " seconds fullness"
+				}
+
+				ExtraDefenseStats:
+					'''
+
+					{0}% Inoculation
+					'''
+
+				LootUI: {
+					LootQuotes: {
+						0: Loot?
+						1: Loot!
+						2: Shiny treasures!
+						3: Shinies!
+						4: Treasure!
+						5: For your troubles...
+						6: This looks valuable...
+						7: Not a mimic!
+						8: Shiny!
+					}
+
+					Get: You get:
+					Pick: Pick two:
+				}
+
+				MasterDeathTicker: {
+					DeathsTo: "Deaths to {0}: "
+
+					DeathsText: {
+						0: Maybe try Journey Mode...
+						1: You're not supposed to win.
+						2: Whoopsie daisy.
+						3: It's not THAT hard.
+						4: Give up.
+						5: Have you tried dodging?
+						6: skill issue
+						7: Are the logged hours on your Steam account accurate?
+						8: You sure you wanna do this?
+						9: There are easier difficulties you know.
+						10: You can install Dragonlens from the mod browser.
+						11: You can always come back after beating other bosses.
+						12: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+						13: Just so you know, Starlight River does not have a pacifist route. Consider changing your playstyle.
+						14: Press {0} to jump.
+						15: You died so many times you broke our snarky quote code. Great job.
+					}
+				}
+
+				StaminaNumber: Stamina: {0}/{1}
+			}
+
+			System: {
+				BossRushText: {
+					Separate: =====================================================
+					AdapativeDamage: Adapative damage resistance stats:
+					CurrentResistance: "Current resistance: "
+					PerfectResistance: "Perfect resistance: "
+					UnadjustedDPS: "unadjusted DPS estimate: "
+					AdjustedDPS: "adjusted DPS estimate: "
+					DPSTarget: "DPS target: "
+					CurrentBoss: "Current boss: "
+					CurrentTtage: "Current stage: "
+					Score: "Score: "
+				}
+
+				DebugText: {
+					Menu:
+						'''
+						Debug mode options:
+						Y: Hold to speed up game\n
+						U: Hold to slow down game\n
+						P: Press to change difficulty
+						'''
+					Expert: The game is now in expert mode.
+					Master: The game is now in master mode.
+					Normal: The game is now in normal mode.
+				}
+			}
 		}
 
 		Items: {
@@ -1141,6 +1548,8 @@ Mods: {
 					Chains to nearby enemies
 					Inflicts overcharge, greatly lowering enemy defense
 					'''
+				DamageTooltip: Deals 25% bow damage
+				CritChanceTooltip: Cannot critically strike
 			}
 
 			FiletGiblet1: {
@@ -1278,6 +1687,7 @@ Mods: {
 					Time moves more slowly for you briefly after being hit
 					50% reduced damage
 					'''
+				JadeStopwatchMarkTooltip: Obtained by beating {0} in {1}
 			}
 
 			LostCollar: {
@@ -1418,6 +1828,7 @@ Mods: {
 					Select an area of blocks to be broken
 					Consumes 2 mana per block broken
 					'''
+				4999Text: Sorcerwrench error: too many tries! Report to developers of Starlight River immediately!
 			}
 
 			SoulOfFrog: {
@@ -1592,6 +2003,7 @@ Mods: {
 			Shaker: {
 				DisplayName: The Shaker
 				Tooltip: ""
+				SpeedTooltip: Snail Speed
 			}
 
 			PalestoneNail: {
@@ -1882,6 +2294,7 @@ Mods: {
 					Releasing will fire the runes towards your cursor
 					Continuing to hold will detonate them for increased damage around you
 					'''
+				CloneText: "Cloned new staff with a charge level of: "
 			}
 
 			TempleLens: {
@@ -1931,11 +2344,21 @@ Mods: {
 					Stores armor for quick use
 					Contains:
 					'''
+				NoHelmet: No helmet
+				NoChestplate: No chestplate
+				NoLeggings: No leggings
+				MoreTooltip:
+					'''
+					Right click to equip stored armor
+					Right click with armor to add it to the bag
+					Ctrl-Right click to empty the bag
+					'''
 			}
 
 			ChefBag: {
 				DisplayName: Chef's Bag
 				Tooltip: Stores lots of every ingredient
+				AddIngredient: Ingredient added to chefs bag
 			}
 
 			CurseRemover: {
@@ -2004,6 +2427,7 @@ Mods: {
 					Charge for a volley of brilliant magic
 					Fully charged shots leech mana when they collide
 					'''
+				SpeedTooltip: Slow charge
 			}
 
 			FacetAndLattice: {
@@ -2014,6 +2438,8 @@ Mods: {
 					Attacks are empowered after a guard
 					Empowerment is more effective with better guard timing
 					'''
+				ShieldLife: 50 shield life
+				CantBlock: Cant block!
 			}
 
 			GlassIdol: {
@@ -3628,28 +4054,151 @@ Mods: {
 		}
 
 		Biomes: {
-			HotspringBiome.DisplayName: Hotsprings
-			MoonstoneBiome.DisplayName: Moonstone
-			OvergrowBiome.DisplayName: "[PH]Overgrowth"
-			PermafrostTempleBiome.DisplayName: Auroracle Temple
-			VitricDesertBiome.DisplayName: Vitric Desert
-			VitricTempleBiome.DisplayName: Vitric Forge
-			CombatShrineBiome.DisplayName: Combat Shrine Biome
-			EvasionShrineBiome.DisplayName: Evasion Shrine Biome
+			HotspringBiome: {
+				DisplayName: Hotsprings
+				TownNPCDialogueName: the Hotspring Biome
+			}
+
+			MoonstoneBiome: {
+				DisplayName: Moonstone
+				TownNPCDialogueName: the Moonstone Biome
+				SomeText: Drawing to target!
+			}
+
+			OvergrowBiome: {
+				DisplayName: "[PH]Overgrowth"
+				TownNPCDialogueName: the Overgrow Biome
+			}
+
+			PermafrostTempleBiome: {
+				DisplayName: Auroracle Temple
+				TownNPCDialogueName: the Permafrost Temple Biome
+			}
+
+			VitricDesertBiome: {
+				DisplayName: Vitric Desert
+				TownNPCDialogueName: the Vitric Desert Biome
+			}
+
+			VitricTempleBiome: {
+				DisplayName: Vitric Forge
+				TownNPCDialogueName: the Vitric Temple Biome
+			}
+
+			CombatShrineBiome: {
+				DisplayName: Combat Shrine Biome
+				TownNPCDialogueName: the Combat Shrine Biome
+			}
+
+			EvasionShrineBiome: {
+				DisplayName: Evasion Shrine Biome
+				TownNPCDialogueName: the Evasion Shrine Biome
+			}
 		}
 
 		NPCs: {
-			Glassweaver.DisplayName: Glassweaver
-			GlassweaverWaiting.DisplayName: Glassweaver
+			Glassweaver: {
+				DisplayName: Glassweaver
+				NickName: Worker of the Anvil
+			}
+
+			GlassweaverWaiting: {
+				DisplayName: Glassweaver
+
+				TownNPCMood: {
+					Content: I am content.
+					NoHome: I hate not having a home.
+					FarFromHome: I am too far from home.
+					LoveSpace: I love having so much space.
+					DislikeCrowded: I dislike how crowded I am.
+					HateCrowded: I hate how crowded I am.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I dislike {BiomeName}.
+					HateBiome: I hate {BiomeName}.
+					LoveNPC: I love {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I dislike {NPCName}.
+					HateNPC: I hate {NPCName}.
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				GlassweaverCombatText: {
+					1: Begin
+					2: Wave 2
+					3: Wave 3
+					4: Wave 4
+					5: Wave 5
+					6: Wave 6
+					7: Wave 7
+				}
+
+				GetIntroDialogue: {
+					0: Ah, you've finally found me. Come to browse my wares? My commissions are full, but for the right price, I'm sure we can work something out. Or... that look you're giving me... Are you perhaps a fan?
+					1: I- Wh- What? What do you mean, you just 'wandered in here'? Nobody comes to see the Legendary Weaver of Glass without a reason, especially outside of my forge! It must have been... FATE!
+					2: Yes, yes, you see, I've actually been having some trouble lately. I know, it's hard to believe, me, in trouble, right, but I do need the assistance of a daring one such as you. Think of it as... a quest, or something. Adventurers love those, right?
+					3: I am an artist, and crystal is my medium, but to properly work it I need some very powerful equipment, and, well, how should I say this... I did maybe forget to maintain the tools in my chosen forge for a bit. Only a few centuries. Don't give me that look.
+					4: Mine is on its last legs and I need better equipment, so I've been diligently scouting out the one we are currently chatting on top of. Thing is, it's almost in even more disrepair! If you, kind explorer, are brave enough to venture in and fix up the forge, I'll let you keep whatever you find inside and forge you something special.
+					5: No- Wait! You can't just barge in, you need a key. I need to know if I am giving my faith and crystal to the right person, so when you think you're strong enough, come to my forge and I'll test you properly. Here, I'll show you the way.
+					6: This text should never be seen! Please report to https://github.com/ProjectStarlight/StarlightRiver/issues
+				}
+
+				GetAfterCameraDialogue: Magnificent, isn't it? But it's not enough.You might not be able to tell with your lack of experience and all, but I give it only a few more years before the magma channels erode and the forgeheart collapses. Don't disappoint me, adventurer. You know where to find me.
+
+				GetWaitingDialogue: {
+					0: Are you finally ready to prove your worth? It's honestly very hard for me to tell, you lot are always so small and scrawny.
+					1: Adventurer, you return! Are you here to challenge me, or just gaze at my wonderful works?
+					2: Ah, my fated champion! Here to liberate my forge from that dastardly Sentinel? Er- forget I said that. I'll tell you about it if you win.
+					3: This text should never be seen! Please report to https://github.com/ProjectStarlight/StarlightRiver/issues
+				}
+
+				GetWinDialogue: {
+					0: Congratulations, you destroyed many decades of my finest work! I really should have thought this through more. I was going to have those help you clear out the forge, but... I'm sure you'll figure it out. Let me fill you in on what to expect.
+					1: My Great Map of the Grand Forge Temple. Just another legendary artwork that I'm allowing you to briefly look at, free of charge. You can see the three main rooms of the forge here, here, and here. All three are most likely broken in some way, and if you want access to the vault at the bottom, you'll have to get all three in working order.
+					2: If you enter the vault, there's a pretty high likelihood of the Sentinel taking notice. It will not be happy, but most adventurers have no such compunctions about theft from holy forge-temples and the murder of religious guardians, so you'll probably be able to take it out just fine.
+					3: Why are you looking at me like that? Did I not tell you about the Sentinel before? Ah. It's just a... slightly oversized ceramic snake. That's all. It is not capable of melting the entire temple if you do not escape fast enough. Nope. Just talk to me when you defeat that slightly oversized snake so I can finally move in
+					4: Anyway, here's the Temple Key. Why do you suddenly look so uneasy? Remember your duty, adventurer, and get me my forge temple!
+					5: This text should never be seen! Please report to https://github.com/ProjectStarlight/StarlightRiver/issues
+				}
+
+				GetKeyDialogue: {
+					0: It doesn't look like you've cleared out the forge. What are you standing there for? I'm busy standing here!
+					1: Don't you have better things to be doing, like fixing my forge?
+					2: Adventurer! You defeated the Sentinel so soon? It's a miracle! Oh. Oh, you didn't. Never mind. Go away.
+					3: This text should never be seen! Please report to https://github.com/ProjectStarlight/StarlightRiver/issues
+				}
+
+				GetChat: {
+					TellMore: Tell me more
+					ShowMe: Show me
+					SeeYouLater: See you later
+					Fight: Fight
+					NeedKey: I need a key
+				}
+			}
+
 			ArenaActor.DisplayName: ""
 			GoldPlatform.DisplayName: ""
 			IcePlatform.DisplayName: ""
 			IcePlatformSmall.DisplayName: ""
-			SquidBoss.DisplayName: Auroracle
+
+			SquidBoss: {
+				DisplayName: Auroracle
+				NickName: The Venerated
+				NickName2: Jammed Mod
+			}
+
 			ArenaBottom.DisplayName: ""
 			VitricBackdropLeft.DisplayName: ""
 			VitricBackdropRight.DisplayName: ""
-			VitricBoss.DisplayName: Ceiros
+
+			VitricBoss: {
+				DisplayName: Ceiros
+				NickName: Shattered Sentinel
+				NickName2: Glass tax returns
+			}
+
 			VitricBossCrystal.DisplayName: Resonant Crystal
 			VitricBossPlatformDown.DisplayName: ""
 			VitricBossPlatformDownSmall.DisplayName: ""
@@ -3680,10 +4229,26 @@ Mods: {
 			LesserFirebug.DisplayName: Lesser Firebug
 			MagmitePassive.DisplayName: Small Magmite
 			Snake.DisplayName: Spittin' Snek
-			CodexPickup.DisplayName: Starlight Codex
+
+			CodexPickup: {
+				DisplayName: Starlight Codex
+				Message: Open the codex from your inventory to learn about the world.
+			}
+
 			FaeflamePickup.DisplayName: Faeflame
-			ForbiddenWindsPickup.DisplayName: Forbidden Winds
-			InfusionSlotPickup.DisplayName: Unnerving Device
+
+			ForbiddenWindsPickup: {
+				DisplayName: Forbidden Winds
+				Message: Press W/A/S/D {0} to dash.
+				Message2: Press W/A/S/D [Please Bind a Key] to dash.
+			}
+
+			InfusionSlotPickup: {
+				DisplayName: Unnerving Device
+				DisplayText: Mysterious Technology
+				DisplayText2: What has it done to you?
+			}
+
 			BerrySlime.DisplayName: Slimeberry
 			TouchstoneWisp.DisplayName: Aurora Spirit
 			ArenaBlocker.DisplayName: Arena Blocker
@@ -3699,10 +4264,76 @@ Mods: {
 			Stalker.DisplayName: Stalker
 			Dreambeast.DisplayName: Dreambeast
 			WaterCube.DisplayName: Water Cube
-			EnchantNPC.DisplayName: Enchant N P C
-			Voidsmith.DisplayName: Voidsmith
-			DesertWisp2.DisplayName: Desert Wisp2
-			StaminaShardPickup.DisplayName: Stamina Shard Pickup
+
+			EnchantNPC: {
+				DisplayName: Enchant N P C
+
+				TownNPCMood: {
+					Content: I am content.
+					NoHome: I hate not having a home.
+					FarFromHome: I am too far from home.
+					LoveSpace: I love having so much space.
+					DislikeCrowded: I dislike how crowded I am.
+					HateCrowded: I hate how crowded I am.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I dislike {BiomeName}.
+					HateBiome: I hate {BiomeName}.
+					LoveNPC: I love {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I dislike {NPCName}.
+					HateNPC: I hate {NPCName}.
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Button: {
+					Chat: "[]Chat"
+					OpenEnchantUI: "[<color:200, 140, 255>]Enchant"
+					PackUp: "[]Move Altar"
+				}
+
+				PackUpText: IMPLEMENT THE STRUCTURE YOU LAZY BITCH
+			}
+
+			Voidsmith: {
+				DisplayName: Voidsmith
+
+				TownNPCMood: {
+					Content: I am content.
+					NoHome: I hate not having a home.
+					FarFromHome: I am too far from home.
+					LoveSpace: I love having so much space.
+					DislikeCrowded: I dislike how crowded I am.
+					HateCrowded: I hate how crowded I am.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I dislike {BiomeName}.
+					HateBiome: I hate {BiomeName}.
+					LoveNPC: I love {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I dislike {NPCName}.
+					HateNPC: I hate {NPCName}.
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				GetChat: No Text
+				Button2: Upgrades
+				Shop: Shop
+			}
+
+			DesertWisp2.DisplayName: Desert Wisp
+
+			StaminaShardPickup: {
+				DisplayName: Stamina Shard Pickup
+				StaminaVessel: Stamina Vessel
+				StaminaIncreased: Your maximum stamina has increased by 1
+				StaminaVesselShard: Stamina Vessel Shard
+				StaminaShardCount: Collect {0} more to increase your maximum stamina
+				SetNumber: "pickup set to stamina shard number "
+			}
+
 			Coolmite.DisplayName: Coolmite
 		}
 
@@ -3753,6 +4384,7 @@ Mods: {
 			HotspringHeal: {
 				DisplayName: Refreshing Dip
 				Description: The hot springs restore your body and mind
+				ExtraDescription: An evil presence prevents you from relaxing in the hot springs!
 			}
 
 			Illuminant: {
@@ -3903,6 +4535,7 @@ Mods: {
 			ImpactSMGBuff: {
 				DisplayName: Heated Up!
 				Description: ""
+				DamageIncreasedDescription: The Impact SMG deals {0}% increased damage
 			}
 
 			IronheartBuff: {
@@ -3987,20 +4620,222 @@ Mods: {
 		}
 
 		Prefixes: {
-			DefensivePrefix.DisplayName: Defensive
-			DoTResistPrefix1.DisplayName: Healthy
-			DoTResistPrefix2.DisplayName: Protected
-			DoTResistPrefix3.DisplayName: Blessed
-			LayeredPrefix.DisplayName: Layered
-			PlatedPrefix.DisplayName: Plated
-			ReinforcedPrefix.DisplayName: Reinforced
-			StaminaPrefix1.DisplayName: Springy
-			StaminaPrefix2.DisplayName: Energetic
-			StaminaPrefix3.DisplayName: Empowered
-			StaminaPrefix4.DisplayName: Overcharged
-			Feral.DisplayName: Feral
-			Jumpy.DisplayName: Jumpy
-			Tanklike.DisplayName: Tanklike
+			LayeredPrefix: {
+				DisplayName: Layered
+				Ability: +4 Barrier
+			}
+
+			DefensivePrefix: {
+				DisplayName: Defensive
+				Ability: +8 Barrier
+			}
+
+			PlatedPrefix: {
+				DisplayName: Plated
+				Ability: +12 Barrier
+			}
+
+			ReinforcedPrefix: {
+				DisplayName: Reinforced
+				Ability: +16 Barrier
+			}
+
+			DoTResistPrefix1: {
+				DisplayName: Healthy
+				Ability: +2% Inoculation
+			}
+
+			DoTResistPrefix2: {
+				DisplayName: Protected
+				Ability: +4% Inoculation
+			}
+
+			DoTResistPrefix3: {
+				DisplayName: Blessed
+				Ability: +8% Inoculation
+			}
+
+			StaminaPrefix1: {
+				DisplayName: Springy
+				Ability: +2 stamina regeneration
+			}
+
+			StaminaPrefix2: {
+				DisplayName: Energetic
+				Ability: +4 stamina regeneration
+			}
+
+			StaminaPrefix3: {
+				DisplayName: Empowered
+				Ability: +6 stamina regeneration
+			}
+
+			StaminaPrefix4: {
+				DisplayName: Overcharged
+				Ability: +8 stamina regeneration
+			}
+
+			Feral: {
+				DisplayName: Feral
+				Tip: +35% Attack Speed
+				Tip2: -50% Secondary Cooldown Recovery
+			}
+
+			Jumpy: {
+				DisplayName: Jumpy
+				Tip: +15% Attack Speed
+				Tip2: +10% Movement Speed
+			}
+
+			Tanklike: {
+				DisplayName: Tanklike
+				Tip: +25% Attack Speed
+				Tip2: +25% Secondary Cooldown Recovery
+				Tip3: -40% Movement Speed
+			}
+		}
+
+		BossChecklist: {
+			BossName: {
+				Auroracle: Auroracle
+				Glassweaver: Glassweaver
+				Ceiros: Ceiros
+				OGBoss: ???
+			}
+
+			BossDescription: {
+				Auroracle: Drop Auroracle Bait into the prismatic waters of the permafrost shrine.
+				Glassweaver: Challenge the glassweaver in his forge in the vitric desert.
+				Ceiros: Use a Glass Idol at cerios' atop the vitric temple, after breaking the crystal covering it.
+				OGBoss: Implement
+			}
+
+			BossDisappear: {
+				Auroracle: The permafrost cathedral falls silent.
+				Glassweaver: The glassweaver claims victory.
+				Ceiros: The vitric forge falls silent.
+				OGBoss: "[PH]OG boss loss message"
+			}
+		}
+
+		ArmorSetBonus: {
+			DebugEnchant: Spams the chat with debug text
+			DebugEnchant2: Acts as a second button to test the UI
+			DebugEnchantText: "{0} Is wearing armor enchanted with the debug enchant!"
+			Breacher:
+				'''
+				A spotter drone follows you, building energy with kills
+				Double tap DOWN to consume it and call down an orbital strike on an enemy
+				'''
+			ForestIvy: After 5 seconds of not taking damage, your next attack will ensnare and cause bleeding.
+			Geomancer:
+				'''
+				Kills ands critical strikes have a chance to drop magic gems
+				Each gem activates a different effect when picked up
+				Obtaining another gem stores the previous effect
+				Collecting all breifly activates every effect at once
+				'''
+			Poltergeist:
+				'''
+				Double tap DOWN with a magic weapon to haunt or unhaunt it, or with an empty hand to unhaunt all
+				Haunted weapons float around you and attack automatically, but decrease your max mana
+				Haunted weapons become disinterested in non-magic users and can't be used while haunted
+				'''
+			Moonstone:
+				'''
+				Accumulate lunar energy by dealing melee damage
+				double tap DOWN to summon the legendary spear Datsuzei
+				Datsuzei consumes lunar energy and dissapears at zero
+				'''
+			Starwood: Picking up mana stars empowers starwood Items, temporarily granting them new effects
+			Vitric:
+				'''
+				Accumulate powerful glass shards over time\nDouble tap DOWN to load these shards into your bow
+				Shards fired from bows have high velocity and damage
+				'''
+		}
+
+		Bestiary: {
+			Auroraborn: Aurora squid can gather ambient light from the aurora to 'fill' the glands on their head, storing it for later use as energy or for self defense.
+			Auroraling: Baby aurora squid are born with their light-sacs fully charged from the glow of their mother, and will rely on this energy untill they are old enough to venture to the surface to gather their own.
+			SquidBoss: An aquatic titan that stalks the impossibly cold waters behind its temple, channeling the light of the aurora into powerful magic to hunt its prey.
+			Dweller: They have evolved to camoflauge themselves as trees, and use this ability to ambush unsuspecting victims in comical fashion. The laugh just sells the point.
+			CrescentCaster: As the first in a long line of dead wizards, this one has had ample time to practice magic. Using its crescent staff, this fiend generates Barrier for all nearby foes - but is immobile while doing so.
+			Blover: Blovers are clover-based plants that harness the ambient mana during particularly windy days to spin their fan-shaped leaves at approaching creatures. They are immobile, and would serve as a good form of defense if one were to discover a way to move or perhaps plant one.
+			Warbanner: An artifact from battles past, this cursed sign still inspires others with the enraging spirit of battle to this day.
+			Fogbinder: They call it... The fogbinder. Appearing during thunderstorms, this being is very Spooky, Demented, Demonic, Hellish, and Evil.
+			AngryCrescent: A chunk of the moon possessed with hatred for you. These creatures will stop at nothing to protect their home.
+			Dreamprism: These anomalous beings are a collection of previously lifeless rocks possessed by the hopes and dreams of the collective subconscious.
+			Snoobel: A curious but cruel creature, the snoobel wanders the frozen caverns, using its trunk as an instrument of absolute death.
+			FlyingGruntConstruct: One of the Glassweaver's constructs. An already formidable duelist, made airborne - speed is war.
+			FlyingPelterConstruct: One of the Glassweaver's constructs. Shares its ground variant's fragility, but it's wings grant it unparalleled vantage.
+			GruntConstruct: One of the Glassweaver's constructs. Uses its small stature and curved blade to menace challengers up close.
+			JuggernautConstruct: One of the Glassweaver's constructs. This sturdy brute will often use its allies as projectiles when out of smashing range.
+			PelterConstruct: One of the Glassweaver's constructs. Relatively fragile, it draws intricate arrows from its own molten body.
+			ShieldConstruct: One of the Glassweaver's constructs. Once its spiked shield is dug into the ground, this stalwart protector is immovable.
+			SupporterConstruct: One of the Glassweaver's constructs. Channels its power to strengthen its allies' glass bodies. This may result in a power surge.
+			BoomBug: "[PH] Entry"
+			Coolmite: "[PH] Entry"
+			CrystalPopper: "[PH] Entry"
+			CrystalSlime: "[PH] Entry"
+			DesertWisp: "[PH] Entry"
+			KettleCreature: "[PH] Entry"
+			MagmitePassive: "[PH] Entry"
+			Snake: "[PH] Entry"
+		}
+
+		DeathMessage: {
+			Impaled: "{0} was impaled..."
+			Laser: "{0} was reduced to ash"
+			Claustrophobia: "{0} couldn't maintain their form."
+			CasualMirror: "{0} didn't read the tooltip"
+			NPCDead: " was slain..."
+			GlassShard: "{0} was impaled by glass shards."
+		}
+
+		TownNpcQuestThing: {
+			Guide: {
+				NpcName: Guide
+				QuestName: "[PH]Guide Quest"
+				QuestTip: No description
+				ButtonName: Rift Crafting
+				TitleName: Scholar
+				ClickButton: No message
+			}
+
+			Locked: {
+				NpcName: ""
+				QuestName: ""
+				QuestTip: ""
+				ButtonName: Locked
+				TitleName: ""
+				ClickButton: Seek the voidsmith in hell for more information...
+			}
+
+			Merchant: {
+				NpcName: Merchant
+				QuestName: "[PH]Merchant Quest"
+				QuestTip: No Description
+				ButtonName: "[PH]Upgraded Merchant Action"
+				TitleName: "[PH]Upgraded merchant"
+				ClickButton: No message
+			}
+		}
+
+		WorldGeneration: {
+			BookAltar: Hiding Codex...
+			AnkhChest: Hiding ancient secrets
+			Artifact: Hiding ancient secrets
+			BigTree: Planting the forest...
+			BouncyMushroo: Making the mushroom biome fun
+			DropPod: Crashing alien tech...
+			ForestHerb: Planting the forest...
+			SeaSalt: Adding Salt
+			TwistSword: Mounting weaponry
+			Vitric: Digging the Vitric Desert
+			VitricGlass: Melting Glass
+			PermaFrost: Permafrost generation
+			Surface: Placing treasures
 		}
 	}
 }

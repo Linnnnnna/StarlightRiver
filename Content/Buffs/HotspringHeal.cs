@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Abilities;
 using System.Linq;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Buffs
 {
@@ -27,7 +28,7 @@ namespace StarlightRiver.Content.Buffs
 		public override void ModifyBuffText(ref string buffName, ref string tip, ref int rare)
 		{
 			if (Main.npc.Any(n => n.active && n.boss))
-				tip = "An evil presence prevents you from relaxing in the hot springs!";
+				tip = Language.GetTextValue("Mods.StarlightRiver.Buffs.HotspringHeal.ExtraDescription");
 		}
 	}
 }

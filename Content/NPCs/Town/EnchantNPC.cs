@@ -1,6 +1,7 @@
 ﻿using StarlightRiver.Content.GUI;
 using StarlightRiver.Core.Loaders.UILoading;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.NPCs.Town
 {
@@ -35,9 +36,9 @@ namespace StarlightRiver.Content.NPCs.Town
 			RichTextBox.ClearButtons();
 
 			SetData();
-			RichTextBox.AddButton("[]Chat", Chat);
-			RichTextBox.AddButton("[<color:200, 140, 255>]Enchant", OpenEnchantUI);
-			RichTextBox.AddButton("[]Move Altar", PackUp);
+			RichTextBox.AddButton(Language.GetTextValue("Mods.StarlightRiver.NPCs.EnchantNPC.Button.Chat"), Chat);
+			RichTextBox.AddButton(Language.GetTextValue("Mods.StarlightRiver.NPCs.EnchantNPC.Button.OpenEnchantUI"), OpenEnchantUI);
+			RichTextBox.AddButton(Language.GetTextValue("Mods.StarlightRiver.NPCs.EnchantNPC.Button.PackUp"), PackUp);
 
 			return "";
 		}
@@ -59,7 +60,7 @@ namespace StarlightRiver.Content.NPCs.Town
 
 		private void PackUp()
 		{
-			Main.NewText("IMPLEMENT THE STRUCTURE YOU LAZY BITCH");
+			Main.NewText(Language.GetTextValue("Mods.StarlightRiver.NPCs.EnchantNPC.PackUpText"));
 		}
 
 		public override void AI()

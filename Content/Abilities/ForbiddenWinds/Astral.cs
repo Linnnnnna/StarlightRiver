@@ -2,6 +2,7 @@
 using System;
 using Terraria.ID;
 using static Terraria.ModLoader.ModContent;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 {
@@ -132,7 +133,7 @@ namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 		{
 			if (Item.type == ItemID.FallenStar)
 			{
-				InfusionObjective objective = FindObjective(Player, "Loot Fallen Stars");
+				InfusionObjective objective = FindObjective(Player, Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.LootFallenStars"));
 
 				if (objective != null)
 					objective.progress += Item.stack;
@@ -144,7 +145,7 @@ namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 		private void TrackKillsRanged(NPC NPC, Projectile Projectile, NPC.HitInfo info, int damageDone)
 		{
 			Player Player = Main.player[Projectile.owner];
-			InfusionObjective killObjective = FindObjective(Player, "Strike Foes");
+			InfusionObjective killObjective = FindObjective(Player, Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.StrikeFoes"));
 
 			if (killObjective != null)
 				killObjective.progress++;
@@ -152,7 +153,7 @@ namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 
 		private void TrackKillsMelee(NPC NPC, Player Player, Item Item, NPC.HitInfo info, int damageDone)
 		{
-			InfusionObjective killObjective = FindObjective(Player, "Strike Foes");
+			InfusionObjective killObjective = FindObjective(Player, Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.StrikeFoes"));
 
 			if (killObjective != null)
 				killObjective.progress++;
@@ -166,8 +167,8 @@ namespace StarlightRiver.Content.Abilities.ForbiddenWinds
 
 		public override void SetDefaults()
 		{
-			objectives.Add(new InfusionObjective("Strike Foes", 10));
-			objectives.Add(new InfusionObjective("Loot Fallen Stars", 5));
+			objectives.Add(new InfusionObjective(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.StrikeFoes"), 10));
+			objectives.Add(new InfusionObjective(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.LootFallenStars"), 5));
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core
 {
@@ -9,7 +10,7 @@ namespace StarlightRiver.Core
 	{
 		public static void BookAltarGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Hiding Codex...";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.BookAltar");
 
 			Vector2 spawn = FindSand();
 			StructureHelper.Generator.GenerateStructure("Structures/CodexTemple", spawn.ToPoint16(), StarlightRiver.Instance);

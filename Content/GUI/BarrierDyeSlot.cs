@@ -7,6 +7,7 @@ using Terraria.GameContent;
 using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.GUI
 {
@@ -95,7 +96,7 @@ namespace StarlightRiver.Content.GUI
 				}
 				else
 				{
-					Main.hoverItemName = "Barrier Tincture";
+					Main.hoverItemName = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BarrierDyeSlot");
 				}
 			}
 		}

@@ -3,6 +3,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Core
@@ -11,7 +12,7 @@ namespace StarlightRiver.Core
 	{
 		private void BouncyMushroomGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Making the mushroom biome fun";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.BouncyMushroo");
 
 			for (int i = 100; i < Main.maxTilesX - 100; i += 4)
 			{

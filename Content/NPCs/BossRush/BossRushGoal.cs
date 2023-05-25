@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.Items.Misc;
 using StarlightRiver.Core.Systems.BossRushSystem;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.NPCs.BossRush
 {
@@ -32,10 +33,10 @@ namespace StarlightRiver.Content.NPCs.BossRush
 				var mi = item.ModItem as JadeStopwatch;
 
 				mi.feat =
-					Main.GameMode == 0 ? "Boss rush" :
-					Main.GameMode == 1 ? "Boss blitz" :
-					Main.GameMode == 2 ? "Starlight showdown" :
-					"Invalid";
+					Main.GameMode == 0 ? Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush") :
+					Main.GameMode == 1 ? Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Name") :
+					Main.GameMode == 2 ? Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Name") :
+					Language.GetTextValue("Mods.StarlightRiver.Common.Invalid");
 
 				mi.time = Helpers.Helper.TicksToTime(BossRushSystem.scoreTimer);
 

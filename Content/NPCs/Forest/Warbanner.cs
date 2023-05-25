@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Forest
@@ -99,7 +100,7 @@ namespace StarlightRiver.Content.NPCs.Forest
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-				new FlavorTextBestiaryInfoElement("An artifact from battles past, this cursed sign still inspires others with the enraging spirit of battle to this day.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.Warbanner"))
 			});
 		}
 

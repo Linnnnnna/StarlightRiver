@@ -5,6 +5,7 @@ using System;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
+using Terraria.Localization;
 using Terraria.WorldBuilding;
 
 namespace StarlightRiver.Core
@@ -17,7 +18,7 @@ namespace StarlightRiver.Core
 
 		public void PermafrostGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Permafrost generation";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.PermaFrost");
 
 			int iceLeft = 0;
 			int iceRight = 0;

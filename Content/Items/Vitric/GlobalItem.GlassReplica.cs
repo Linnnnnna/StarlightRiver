@@ -2,6 +2,7 @@
 using System.Linq;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader.IO;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Vitric
 {
@@ -88,7 +89,7 @@ namespace StarlightRiver.Content.Items.Vitric
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
 			if (item.GetGlobalItem<GlassReplica>().isReplica)
-				tooltips.FirstOrDefault(n => n.Name == "ItemName" && n.Mod == "Terraria").Text = "Replica " + item.Name;
+				tooltips.FirstOrDefault(n => n.Name == "ItemName" && n.Mod == "Terraria").Text = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.Vitric", item.Name);
 		}
 
 		public override bool OnPickup(Item item, Player Player)

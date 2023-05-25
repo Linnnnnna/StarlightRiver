@@ -19,7 +19,7 @@ namespace StarlightRiver.Content.Tiles.Interactive
 			Main.tileBlockLight[Type] = false;
 			Main.tileLighted[Type] = true;
 
-			ItemDrop = ItemType<StaminaOrbItem>();
+			// ItemDrop = ItemType<StaminaOrbItem>();
 			DustType = DustType<Dusts.Stamina>();
 			AddMapEntry(new Color(255, 186, 66));
 		}

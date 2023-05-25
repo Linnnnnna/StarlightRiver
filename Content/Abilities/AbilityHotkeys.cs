@@ -2,6 +2,7 @@
 using StarlightRiver.Content.Abilities.ForbiddenWinds;
 using System;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Abilities
 {
@@ -39,8 +40,8 @@ namespace StarlightRiver.Content.Abilities
 
 		internal void LoadDefaults()
 		{
-			Bind<Dash>("Forbidden Winds", "LeftShift");
-			Bind<Whip>("Faeflame", "F");
+			Bind<Dash>(Language.GetTextValue("Mods.StarlightRiver.Keybinds.ForbiddenWinds.DisplayName"), "LeftShift");
+			Bind<Whip>(Language.GetTextValue("Mods.StarlightRiver.Keybinds.Faeflame.DisplayName"), "F");
 		}
 		internal void Unload()
 		{

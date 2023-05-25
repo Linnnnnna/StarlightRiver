@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Content.GUI;
 using StarlightRiver.Core.Loaders.UILoading;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.CustomHooks
 {
@@ -13,7 +14,7 @@ namespace StarlightRiver.Content.CustomHooks
 		private void WorldGen_StartHardmode(On_WorldGen.orig_StartHardmode orig)
 		{
 			orig();
-			UILoader.GetUIState<MessageBox>().Display("Thank you for playing!", "You've reached the current end of Starlight River. Hardmode content is planned and under development, follow us on social media for spoilers and future updates.");
+			UILoader.GetUIState<MessageBox>().Display(Language.GetTextValue("Mods.StarlightRiver.Common.CustomHooksText.PrehardmodeWarning.Text1"), Language.GetTextValue("Mods.StarlightRiver.Common.CustomHooksText.PrehardmodeWarning.Text2"));
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Core.Systems.CombatMountSystem;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Prefixes.CombatMountPrefixes
 {
@@ -14,21 +15,21 @@ namespace StarlightRiver.Content.Prefixes.CombatMountPrefixes
 
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip", "+25% Attack Speed")
+			var newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip", Language.GetTextValue("Mods.StarlightRiver.Prefixes.Tanklike.Tip"))
 			{
 				IsModifier = true
 			};
 
 			tooltips.Add(newline);
 
-			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", "+25% Secondary Cooldown Recovery")
+			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", Language.GetTextValue("Mods.StarlightRiver.Prefixes.Tanklike.Tip2"))
 			{
 				IsModifier = true
 			};
 
 			tooltips.Add(newline);
 
-			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", "-40% Movement Speed")
+			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", Language.GetTextValue("Mods.StarlightRiver.Prefixes.Tanklike.Tip3"))
 			{
 				IsModifier = true,
 				IsModifierBad = true

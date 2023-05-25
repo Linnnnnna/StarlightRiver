@@ -7,6 +7,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Misc
 {
@@ -106,7 +107,8 @@ namespace StarlightRiver.Content.Items.Misc
 		public override void ModifyBuffText(ref string buffName, ref string tip, ref int rare)
 		{
 			rare = ItemRarityID.Red;
-			tip = "The Impact SMG deals " + Main.LocalPlayer.GetModPlayer<ImpactSMGPlayer>().stacks * 5 + "% " + "increased damage";
+			int StateText = Main.LocalPlayer.GetModPlayer<ImpactSMGPlayer>().stacks * 5;
+			tip = Language.GetTextValue("Mods.StarlightRiver.Buffs.ImpactSMGBuff.DamageIncreasedDescription", StateText);
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, int buffIndex, ref BuffDrawParams drawParams)

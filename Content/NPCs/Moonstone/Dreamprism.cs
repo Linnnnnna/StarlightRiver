@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.NPCs.Moonstone
 {
@@ -100,7 +101,7 @@ namespace StarlightRiver.Content.NPCs.Moonstone
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				Bestiary.SLRSpawnConditions.Moonstone,
-				new FlavorTextBestiaryInfoElement("These anomalous beings are a collection of previously lifeless rocks possessed by the hopes and dreams of the collective subconscious.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.Dreamprism"))
 			});
 		}
 

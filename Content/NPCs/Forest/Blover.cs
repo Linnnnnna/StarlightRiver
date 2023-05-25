@@ -3,6 +3,7 @@ using System.Linq;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader.Utilities;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Forest
@@ -62,7 +63,7 @@ namespace StarlightRiver.Content.NPCs.Forest
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-				new FlavorTextBestiaryInfoElement("Blovers are clover-based plants that harness the ambient mana during particularly windy days to spin their fan-shaped leaves at approaching creatures. They are immobile, and would serve as a good form of defense if one were to discover a way to move or perhaps plant one.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.Blover"))
 			});
 		}
 

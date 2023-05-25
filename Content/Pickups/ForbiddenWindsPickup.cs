@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Pickups
@@ -119,10 +120,11 @@ namespace StarlightRiver.Content.Pickups
 			}
 
 			if (timer == 569) //popup + codex entry
-			{
+			{//TODO 可能有问题
+				string KeyText = StarlightRiver.Instance.AbilityKeys.Get<Dash>().GetAssignedKeys()[0];
 				string message = StarlightRiver.Instance.AbilityKeys.Get<Dash>().GetAssignedKeys().Count > 0 ?
-					"Press W/A/S/D + " + StarlightRiver.Instance.AbilityKeys.Get<Dash>().GetAssignedKeys()[0] + " to dash." :
-					"Press W/A/S/D + [Please Bind a Key] to dash.";
+					Language.GetTextValue("Mods.StarlightRiver.NPCs.ForbiddenWindsPickup.Message", KeyText) :
+					Language.GetTextValue("Mods.StarlightRiver.NPCs.ForbiddenWindsPickup.Message2");
 
 				Main.LocalPlayer.GetHandler().GetAbility<Dash>(out Dash dash);
 				UILoader.GetUIState<TextCard>().Display("Forbidden Winds", message, dash);

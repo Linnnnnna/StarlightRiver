@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
+using Terraria.Localization;
 using Terraria.DataStructures;
 using Terraria.ID;
 
@@ -70,7 +71,7 @@ namespace StarlightRiver.Core
 				VitricSpike.CollideWithSpikes(Player, out int damage);
 
 				if (damage > 0)
-					Player.Hurt(PlayerDeathReason.ByCustomReason(Player.name + " was impaled by glass shards."), damage, 0);
+					Player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetTextValue("Mods.StarlightRiver.DeathMessage.GlassShard", Player.name)), damage, 0);
 			}
 
 			foreach (PlayerTicker ticker in spawners.Where(n => n.Active(Player) && Timer % n.TickFrequency == 0))
@@ -152,9 +153,7 @@ namespace StarlightRiver.Core
 
 			if (Main.masterMode)
 			{
-				UILoader.GetUIState<MessageBox>().Display("WARNING", "Starlight River has unique behavior for it's bosses in master mode. This behavior is intended to be immensely difficult over anything else, and assumes a high amount of knowldge about " +
-					"both the mod and base game. Starlight River master mode is not intended for a first playthrough. Starlight River master mode is not intended to be fair. Starlight River master mode is not intended to be fun for everyone. " +
-					"Please remember that the health, both physical and mental, of yourself and those around you is far more important than this game or anything inside of it.");
+				UILoader.GetUIState<MessageBox>().Display(Language.GetTextValue("Mods.StarlightRiver.Common.WARNING"), Language.GetTextValue("Mods.StarlightRiver.Common.WARNINGText"));
 			}
 		}
 

@@ -6,6 +6,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.NPCs.Snow
@@ -98,7 +99,7 @@ namespace StarlightRiver.Content.NPCs.Snow
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.UndergroundSnow,
-				new FlavorTextBestiaryInfoElement("A curious but cruel creature, the snoobel wanders the frozen caverns, using its trunk as an instrument of absolute death.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.Snoobel"))
 			});
 		}
 

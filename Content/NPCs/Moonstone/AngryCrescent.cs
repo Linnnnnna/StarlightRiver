@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.NPCs.Moonstone
 {
@@ -81,7 +82,7 @@ namespace StarlightRiver.Content.NPCs.Moonstone
 			bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
 			{
 				Bestiary.SLRSpawnConditions.Moonstone,
-				new FlavorTextBestiaryInfoElement("A chunk of the moon possessed with hatred for you. These creatures will stop at nothing to protect their home.")
+				new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.StarlightRiver.Bestiary.AngryCrescent"))
 			});
 		}
 

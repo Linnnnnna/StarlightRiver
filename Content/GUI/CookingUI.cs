@@ -8,6 +8,7 @@ using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -119,7 +120,7 @@ namespace StarlightRiver.Content.GUI
 			int drawY = 0;
 			if (!Elements.Any(n => n is CookingSlot && !(n as CookingSlot).Item.IsAir && ((n as CookingSlot).Item.ModItem as Ingredient).ThisType == IngredientType.Main))
 			{
-				Utils.DrawBorderString(spriteBatch, "Place a Main Course in\nthe top slot to start\ncooking", Basepos + new Vector2(186, 54 + drawY), Color.White, 0.7f);
+				Utils.DrawBorderString(spriteBatch, Language.GetTextValue("Mods.StarlightRiver.Common.GUI.CookingUI.CookText"), Basepos + new Vector2(186, 54 + drawY), Color.White, 0.7f);
 			}
 			else
 			{
@@ -167,8 +168,8 @@ namespace StarlightRiver.Content.GUI
 					drawY += (int)(FontAssets.ItemStack.Value.MeasureString(line.Item1).Y * 0.65f) + 2;
 				}
 
-				Utils.DrawBorderString(spriteBatch, duration / 60 + " seconds duration", Basepos + new Vector2(186, 150), new Color(110, 235, 255), 0.65f);
-				Utils.DrawBorderString(spriteBatch, cooldown / 60 + " seconds fullness", Basepos + new Vector2(186, 164), new Color(255, 170, 120), 0.65f);
+				Utils.DrawBorderString(spriteBatch, duration / 60 + Language.GetTextValue("Mods.StarlightRiver.Common.GUI.CookingUI.CookTimeDuration"), Basepos + new Vector2(186, 150), new Color(110, 235, 255), 0.65f);
+				Utils.DrawBorderString(spriteBatch, cooldown / 60 + Language.GetTextValue("Mods.StarlightRiver.Common.GUI.CookingUI.CookTimeFullness"), Basepos + new Vector2(186, 164), new Color(255, 170, 120), 0.65f);
 
 				if (lineCount > 5)
 				{

@@ -57,10 +57,10 @@ namespace StarlightRiver.Content.CustomHooks
 				}
 
 				if (Main.netMode == NetmodeID.SinglePlayer)
-					Main.NewText("A shard of the moon has landed!", new Color(107, 233, 231));
+					Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.CustomHooksText.AstralMeteor"), new Color(107, 233, 231));
 
 				else if (Main.netMode == NetmodeID.Server)
-					Terraria.Chat.ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("A shard of the moon has landed!"), new Color(107, 233, 231));
+					Terraria.Chat.ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(Language.GetTextValue("Mods.StarlightRiver.Common.CustomHooksText.AstralMeteor")), new Color(107, 233, 231));
 
 				return true;
 			}

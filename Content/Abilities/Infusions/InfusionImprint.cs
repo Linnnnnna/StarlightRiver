@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Abilities.Infusions
@@ -75,7 +76,8 @@ namespace StarlightRiver.Content.Abilities.Infusions
 			{
 				Item.SetDefaults(TransformTo);
 				Item.newAndShiny = true;
-				Main.NewText("Objectives Complete! You've obtained: " + Item.Name);
+				// Main.NewText("Objectives Complete! You've obtained: " + Item.Name);
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.InfusionComplete", Item.Name));
 			}
 		}
 
@@ -83,10 +85,10 @@ namespace StarlightRiver.Content.Abilities.Infusions
 		{
 			var pos = new Vector2(x, y);
 
-			Utils.DrawBorderString(Main.spriteBatch, "Imprinted slate: " + Item.Name, pos, new Color(170, 120, 255).MultiplyRGB(Main.MouseTextColorReal));
+			Utils.DrawBorderString(Main.spriteBatch, Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.ImprintedSlate", Item.Name), pos, new Color(170, 120, 255).MultiplyRGB(Main.MouseTextColorReal));
 			pos.Y += 28;
 
-			Utils.DrawBorderString(Main.spriteBatch, "Complete objectives to transform into an infusion", pos, Main.MouseTextColorReal);
+			Utils.DrawBorderString(Main.spriteBatch, Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.TransformNote"), pos, Main.MouseTextColorReal);
 			pos.Y += 28;
 
 			foreach (InfusionObjective objective in objectives)
@@ -130,7 +132,7 @@ namespace StarlightRiver.Content.Abilities.Infusions
 
 			foreach (TagCompound objectiveTag in tags)
 			{
-				var objective = new InfusionObjective("Invalid Objective", 1);
+				var objective = new InfusionObjective(Language.GetTextValue("Mods.StarlightRiver.Common.Infusion.InvalidObjective"), 1);
 				objective.LoadData(objectiveTag);
 				objectives.Add(objective);
 			}

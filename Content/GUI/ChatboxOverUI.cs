@@ -3,6 +3,7 @@ using StarlightRiver.Core.Loaders.UILoading;
 using System.Collections.Generic;
 using Terraria.GameContent;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -51,7 +52,7 @@ namespace StarlightRiver.Content.GUI
 			if (IsMouseHovering)
 				Main.LocalPlayer.mouseInterface = true;
 
-			bool locked = displayString == "Locked";
+			bool locked = displayString == Language.GetTextValue("Mods.StarlightRiver.Common.GUI.TownButton");
 
 			Texture2D tex = Request<Texture2D>("StarlightRiver/Assets/GUI/NPCButton").Value;
 			spriteBatch.Draw(tex, GetDimensions().ToRectangle(), tex.Frame(), Color.White * (locked ? 0.4f : 0.8f));

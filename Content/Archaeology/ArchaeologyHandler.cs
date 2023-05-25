@@ -3,6 +3,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.Map;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Archaeology
 {
@@ -66,7 +67,7 @@ namespace StarlightRiver.Content.Archaeology
 				Texture2D mapTex = ModContent.Request<Texture2D>(artifact.MapTexturePath).Value;
 
 				if (context.Draw(mapTex, artifact.Position.ToVector2(), Color.White, new SpriteFrame(1, 1, 0, 0), 1, 1, Alignment.Center).IsMouseOver)
-					text = "Artifact";
+					text = Language.GetTextValue("Mods.StarlightRiver.Common.Artifacts");
 			}
 		}
 	}

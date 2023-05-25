@@ -1,4 +1,5 @@
 ﻿using System;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.ArmorEnchantment
 {
@@ -17,7 +18,7 @@ namespace StarlightRiver.Content.ArmorEnchantment
 
 		public override void UpdateSet(Player Player)
 		{
-			Player.setBonus = "Acts as a second button to test the UI";
+			Player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.DebugEnchant2");
 		}
 
 		public override void DrawInInventory(Item Item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color ItemColor, Vector2 origin, float scale)

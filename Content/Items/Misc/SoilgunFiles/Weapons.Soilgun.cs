@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.Misc.SoilgunFiles
 {
@@ -91,12 +92,12 @@ namespace StarlightRiver.Content.Items.Misc.SoilgunFiles
 			{
 				if (ValidSoils.Contains(item.type))
 				{
-					TooltipLine tooltip = new TooltipLine(Mod, "SoilgunAmmoTooltip", "This item can be used as ammo for the Soilgun and Earthduster");
+					TooltipLine tooltip = new TooltipLine(Mod, "SoilgunAmmoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.NormalTooltip"));
 					tooltips.Add(tooltip);
 					tooltip.OverrideColor = new Color(202, 148, 115);
 					if (item.type == Mod.Find<ModItem>("VitricSandItem").Type)
 					{
-						TooltipLine infoTooltip = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of glassy sand, that cause crystals to grow out of enemies\nFor each crystal an enemy has, they take 2 damage per second, plus a base damage of 4, up to a maximum of 10 crystals\nIf an enemy has had 10 crystals on them for more than 4 seconds, all crystals become charged, exploding shorty after");
+						TooltipLine infoTooltip = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.VitricSandTooltip"));
 						tooltips.Add(infoTooltip);
 						infoTooltip.OverrideColor = new Color(202, 148, 115);
 						return;
@@ -104,14 +105,14 @@ namespace StarlightRiver.Content.Items.Misc.SoilgunFiles
 
 					switch (item.type)
 					{
-						case ItemID.SandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of sand that split into many grains of sand upon death"); break;
-						case ItemID.CrimsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of Crimsand that steal life from hit enemies"); break;
-						case ItemID.EbonsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of Ebonsand that apply stacks of Haunted to enemies"); break;
-						case ItemID.PearlsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of Pearlsand that home in on enemies"); break;
-						case ItemID.DirtBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of dirt"); break;
-						case ItemID.SiltBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of silt, that spawn coins upon hitting enemies"); break;
-						case ItemID.SlushBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of slush that cause hit enemies to have icicles impale them\nHitting and enemy with more than 10 icicles causes all icicles to shatter, causing large amounts of damage"); break;
-						case ItemID.MudBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", "When used with the Soilgun or Earthduster, it will fire out blocks of mud that bounce off tiles and enemies"); break;
+						case ItemID.SandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.SandBlockTooltip")); break;
+						case ItemID.CrimsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.CrimsandBlockTooltip")); break;
+						case ItemID.EbonsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.EbonsandBlockTooltip")); break;
+						case ItemID.PearlsandBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.PearlsandBlockTooltip")); break;
+						case ItemID.DirtBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.DirtBlockTooltip")); break;
+						case ItemID.SiltBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.SiltBlockTooltip")); break;
+						case ItemID.SlushBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.SlushBlockTooltip")); break;
+						case ItemID.MudBlock: infoTooltip2 = new TooltipLine(Mod, "AmmoInfoTooltip", Language.GetTextValue("Mods.StarlightRiver.Common.SoilgunTooltipTextList.MudBlockTooltip")); break;
 					}
 
 					tooltips.Add(infoTooltip2);

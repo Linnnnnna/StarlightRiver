@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Terraria.Localization;
 using Terraria.GameContent.Generation;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
@@ -252,6 +253,7 @@ namespace StarlightRiver.Core.Systems.BossRushSystem
 				return;
 
 			//tasks.Clear();
+			//TODO 我不知道
 			tasks.Add(new PassLegacy("Boss rush arena clear", (a, b) =>
 			{
 				for (int x = 0; x < Main.maxTilesX; x++)
@@ -422,7 +424,7 @@ namespace StarlightRiver.Core.Systems.BossRushSystem
 			if (!isBossRush)
 				return;
 
-			Utils.DrawBorderString(spriteBatch, "Score: " + score, new Vector2(32, 200), Color.White);
+			Utils.DrawBorderString(spriteBatch, Language.GetTextValue("Mods.StarlightRiver.Common.System.BossRushText.Score") + score, new Vector2(32, 200), Color.White);
 		}
 
 		/// <summary>

@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Vitric
@@ -47,7 +48,7 @@ namespace StarlightRiver.Content.Items.Vitric
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			tooltips.Find(n => n.Name == "Speed" && n.Mod == "Terraria").Text = "Slow charge";
+			tooltips.Find(n => n.Name == "Speed" && n.Mod == "Terraria").Text = Language.GetTextValue("Mods.StarlightRiver.Items.Coalescence.SpeedTooltip");
 		}
 
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

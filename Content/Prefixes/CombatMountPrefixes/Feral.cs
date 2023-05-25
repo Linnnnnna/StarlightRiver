@@ -1,5 +1,6 @@
 ﻿using StarlightRiver.Core.Systems.CombatMountSystem;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Prefixes.CombatMountPrefixes
 {
@@ -13,14 +14,14 @@ namespace StarlightRiver.Content.Prefixes.CombatMountPrefixes
 
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip", "+35% Attack Speed")
+			var newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip", Language.GetTextValue("Mods.StarlightRiver.Prefixes.Feral.Tip"))
 			{
 				IsModifier = true
 			};
 
 			tooltips.Add(newline);
 
-			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", "-50% Secondary Cooldown Recovery")
+			newline = new TooltipLine(StarlightRiver.Instance, "PrefixTip2", Language.GetTextValue("Mods.StarlightRiver.Prefixes.Feral.Tip2"))
 			{
 				IsModifier = true,
 				IsModifierBad = true

@@ -1,4 +1,5 @@
 ﻿using System;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Bosses.VitricBoss
@@ -130,7 +131,7 @@ namespace StarlightRiver.Content.Bosses.VitricBoss
 
 						if (Player.active && !Player.dead && Helpers.Helper.CheckLinearCollision(Projectile.Center, endpoint, Player.Hitbox, out Vector2 point))
 						{
-							Player.Hurt(Terraria.DataStructures.PlayerDeathReason.ByCustomReason(Player.name + " was reduced to ash"), Main.masterMode ? 9999999 : Main.expertMode ? 65 : 45, 0, false, false, -1, false);
+							Player.Hurt(Terraria.DataStructures.PlayerDeathReason.ByCustomReason(Language.GetTextValue("Mods.StarlightRiver.DeathMessage.Laser", Player.name)), Main.masterMode ? 9999999 : Main.expertMode ? 65 : 45, 0, false, false, -1, false);
 							endpoint = point;
 							break;
 						}

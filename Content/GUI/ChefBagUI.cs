@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.ModLoader.UI.Elements;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -63,7 +64,7 @@ namespace StarlightRiver.Content.GUI
 		private void ChangeOwnedMode()
 		{
 			hideUnowned = !hideUnowned;
-			OwnedButton.SetImage(Request<Texture2D>("StarlightRiver/Assets/GUI/HideButton" + (hideUnowned ? "On" : "Off"), ReLogic.Content.AssetRequestMode.ImmediateLoad));
+			OwnedButton.SetImage(Request<Texture2D>("StarlightRiver/Assets/GUI/HideButton" + (hideUnowned ? Language.GetTextValue("Mods.StarlightRiver.Common.On") : Language.GetTextValue("Mods.StarlightRiver.Common.Off")), ReLogic.Content.AssetRequestMode.ImmediateLoad));
 			RebuildGrid();
 		}
 
@@ -148,16 +149,16 @@ namespace StarlightRiver.Content.GUI
 				RebuildGrid();
 
 			if (SortButton.IsMouseHovering)
-				Main.hoverItemName = "Sort mode:\n" + sortMode;
+				Main.hoverItemName = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.ChefBagUI.SortMode") + "\n" + sortMode;
 
 			if (OwnedButton.IsMouseHovering)
-				Main.hoverItemName = "Hide unowned:\n" + hideUnowned;
+				Main.hoverItemName = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.ChefBagUI.HideUnowned") + "\n" + hideUnowned;
 
 			if (IngredientTab.IsMouseHovering)
-				Main.hoverItemName = "Ingredients";
+				Main.hoverItemName = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.ChefBagUI.Ingredients");
 
 			if (RecipieTab.IsMouseHovering)
-				Main.hoverItemName = "Cookbook";
+				Main.hoverItemName = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.ChefBagUI.Cookbook");
 
 			if (!Main.playerInventory)
 				visible = false;

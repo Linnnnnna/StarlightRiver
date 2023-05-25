@@ -1,12 +1,14 @@
-﻿namespace StarlightRiver.Content.NPCs.TownUpgrade
+﻿using Terraria.Localization;
+
+namespace StarlightRiver.Content.NPCs.TownUpgrade
 {
 	class LockedUpgrade : TownUpgrade
-	{
-		public LockedUpgrade() : base("", "", "", "Locked", "") { }
+	{//TODO 精简代码
+		public LockedUpgrade() : base("", "", "", Language.GetTextValue("Mods.StarlightRiver.TownNpcQuestThing.Locked.ButtonName"), "") { }
 
 		public override void ClickButton()
 		{
-			Main.NewText("Seek the voidsmith in hell for more information...", Color.Red);
+			Main.NewText(Language.GetTextValue("Mods.StarlightRiver.TownNpcQuestThing.Locked.ClickButton"), Color.Red);
 		}
 	}
 }

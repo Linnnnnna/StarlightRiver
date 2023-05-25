@@ -5,6 +5,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.GameContent.UI.States;
 using Terraria.IO;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.GUI
 {
@@ -21,7 +22,7 @@ namespace StarlightRiver.Content.GUI
 
 		public override void OnInitialize()
 		{
-			button = new UIText("Boss rush");
+			button = new UIText(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush"));//TODO 修复文本
 			button.Left.Set(360, 0.5f);
 			button.Top.Set(240, 0);
 			button.Width.Set(100, 0);
@@ -54,34 +55,19 @@ namespace StarlightRiver.Content.GUI
 			return 0;
 		}
 
-		public override void OnInitialize()
+		public override void OnInitialize() //TODO 修复文本
 		{
-			var normal = new BossRushChoice("Boss rush",
-				" - Fight all Starlight River bosses in order! NEWBLOCK" +
-				" - Normal difficulty NEWBLOCK" +
-				" - Full heal between bosses", 0);
+			var normal = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Normal.Description"), 0);
 			normal.Left.Set(-150, 0.25f);
 			normal.Top.Set(-300, 0.5f);
 			Append(normal);
 
-			var expert = new BossRushChoice("Boss blitz",
-				" - Fight all Starlight River bosses in order! NEWBLOCK" +
-				" - Expert difficulty NEWBLOCK" +
-				" - Heal 200 life between bosses NEWBLOCK" +
-				" - Game moves at 1.25x speed! NEWBLOCK" +
-				" - 2x Score multiplier!", 1);
+			var expert = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Name"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Description"), 1);
 			expert.Left.Set(-150, 0.5f);
 			expert.Top.Set(-300, 0.5f);
 			Append(expert);
 
-			var master = new BossRushChoice("Starlight\nshowdown",
-				" - Fight all Starlight River bosses in order! NEWBLOCK" +
-				" - Master difficulty NEWBLOCK" +
-				" - No healing between bosses NEWBLOCK" +
-				" - Game moves at 1.5x speed! NEWBLOCK" +
-				" - Healing potions disabled! NEWBLOCK" +
-				" - Teleportation disabled! NEWBLOCK" +
-				" - 3x Score multiplier!", 2);
+			var master = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Name"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Description"), 2);
 			master.Left.Set(-150, 0.75f);
 			master.Top.Set(-300, 0.5f);
 			Append(master);
@@ -132,7 +118,7 @@ namespace StarlightRiver.Content.GUI
 				difficulty == 2 ? BossRushSystem.savedMasterScore :
 				0;
 
-			string scoreString = sourceScore > 0 ? $"Score: {sourceScore}" : "No score!";
+			string scoreString = sourceScore > 0 ? Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Score", sourceScore) : Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.NoScore");
 			Color scoreColor = sourceScore > 0 ? Color.Yellow : Color.Gray;
 			Utils.DrawBorderStringBig(spriteBatch, scoreString, pos + new Vector2(dims.Width / 2f, 536), scoreColor, 0.5f, 0.5f);
 		}

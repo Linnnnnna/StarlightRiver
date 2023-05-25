@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Food
@@ -50,7 +51,7 @@ namespace StarlightRiver.Content.Items.Food
 			}
 			else
 			{
-				Main.NewText("Bad food! Please report me to the Mod devs.", Color.Red);
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.Meal.BadFood"), Color.Red);
 			}
 
 			Item.stack--;
@@ -87,10 +88,10 @@ namespace StarlightRiver.Content.Items.Food
 			if (Ingredients.Any(n => (n.ModItem as Ingredient).ThisType == IngredientType.Side))
 			{
 				List<Item> sides = Ingredients.FindAll(n => (n.ModItem as Ingredient).ThisType == IngredientType.Side);
-				sidesName += " with " + sides[0].Name;
+				sidesName += Language.GetTextValue("Mods.StarlightRiver.Common.Meal.SidesNameWith") + sides[0].Name;
 
 				if (sides.Count == 2)
-					sidesName += " and " + sides[1].Name;
+					sidesName += Language.GetTextValue("Mods.StarlightRiver.Common.Meal.SidesNameAnd") + sides[1].Name;
 			}
 
 			string mainName = "";
@@ -115,10 +116,10 @@ namespace StarlightRiver.Content.Items.Food
 				tooltips.Add(line);
 			}
 
-			TooltipLine durationLine = new TooltipLine(Mod, "StarlightRiver: Duration", (int)(Fullness * FullnessMult) / 60 + " seconds duration") { OverrideColor = new Color(110, 235, 255) };
+			TooltipLine durationLine = new TooltipLine(Mod, "StarlightRiver: Duration", (int)(Fullness * FullnessMult) / 60 + Language.GetTextValue("Mods.StarlightRiver.Common.GUI.CookingUI.CookTimeDuration")) { OverrideColor = new Color(110, 235, 255) };
 			tooltips.Add(durationLine);
 
-			TooltipLine cooldownLine = new TooltipLine(Mod, "StarlightRiver: Cooldown", (int)(Fullness * 1.5f * WellFedMult) / 60 + " seconds fullness") { OverrideColor = new Color(255, 170, 120) };
+			TooltipLine cooldownLine = new TooltipLine(Mod, "StarlightRiver: Cooldown", (int)(Fullness * 1.5f * WellFedMult) / 60 + Language.GetTextValue("Mods.StarlightRiver.Common.GUI.CookingUI.CookTimeFullness")) { OverrideColor = new Color(255, 170, 120) };
 			tooltips.Add(cooldownLine);
 		}
 

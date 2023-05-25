@@ -1,4 +1,5 @@
 ﻿using StarlightRiver.Content.Biomes;
+using Terraria.Localization;
 using Terraria.GameContent.ItemDropRules;
 
 namespace StarlightRiver.Content.NPCs.Vitric.Gauntlet
@@ -17,7 +18,7 @@ namespace StarlightRiver.Content.NPCs.Vitric.Gauntlet
 
 		public string GetConditionDescription()
 		{
-			return "When killed inside the vitric forge";
+			return Language.GetTextValue("Mods.StarlightRiver.Condition.TempleCondition");
 		}
 	}
 }

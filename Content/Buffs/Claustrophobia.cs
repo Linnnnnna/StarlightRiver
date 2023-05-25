@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria.DataStructures;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Buffs
 {
@@ -17,7 +18,7 @@ namespace StarlightRiver.Content.Buffs
 			{
 				int dps = Player.statLifeMax2 / 10;
 				int dmg = dps / 4;
-				Player.Hurt(PlayerDeathReason.ByCustomReason(Player.name + " couldn't maintain their form."), dmg, 0);
+				Player.Hurt(PlayerDeathReason.ByCustomReason(Language.GetTextValue("Mods.StarlightRiver.DeathMessage.Claustrophobia", Player.name)), dmg, 0);
 				Player.immune = false;
 			}
 

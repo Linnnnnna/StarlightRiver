@@ -3,6 +3,7 @@ using StarlightRiver.Core.Loaders.UILoading;
 using System.Collections.Generic;
 using Terraria.GameContent;
 using Terraria.UI;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.GUI
@@ -26,7 +27,7 @@ namespace StarlightRiver.Content.GUI
 
 			Texture2D tex = mp.CodexState == 1 ? Request<Texture2D>("StarlightRiver/Assets/GUI/Book1Closed").Value : Request<Texture2D>("StarlightRiver/Assets/GUI/Book2Closed").Value;
 
-			string str = "New Entry: " + Text;
+			string str = Language.GetTextValue("Mods.StarlightRiver.Common.NewEntry") + Text;
 			float stringWidth = FontAssets.MouseText.Value.MeasureString(str).X;
 			float xOff = stringWidth;
 

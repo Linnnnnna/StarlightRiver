@@ -2,6 +2,7 @@
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.UI.Chat;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.BaseTypes
 {
@@ -183,7 +184,7 @@ namespace StarlightRiver.Content.Items.BaseTypes
 			if (ammoItem == null)
 				return;
 
-			TooltipLine AmmoLine = new TooltipLine(StarlightRiver.Instance, "AmmoLineToolTip", $"Current Ammo: [i:{ammoItem.type}]{ammoItem.stack}");
+			TooltipLine AmmoLine = new TooltipLine(StarlightRiver.Instance, "AmmoLineToolTip", Language.GetTextValue("Mods.StarlightRiver.Common.AmmoLineToolTip", ammoItem.type, ammoItem.stack));
 			TooltipLine kbLine = tooltips.Find(n => n.Name == "Knockback");
 			int index = kbLine is null ? tooltips.Count - 1 : tooltips.IndexOf(kbLine);
 			tooltips.Insert(index + 1, AmmoLine);

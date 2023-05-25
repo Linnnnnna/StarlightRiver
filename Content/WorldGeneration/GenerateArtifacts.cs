@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.Utilities;
+using Terraria.Localization;
 using Terraria.WorldBuilding;
 
 namespace StarlightRiver.Core
@@ -12,7 +13,7 @@ namespace StarlightRiver.Core
 	{
 		private void ArtifactGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Hiding ancient secrets";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.Artifact");
 
 			PlaceDesertArtifacts();
 			PlaceOceanArtifacts();

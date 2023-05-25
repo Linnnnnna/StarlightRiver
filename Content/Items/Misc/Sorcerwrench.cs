@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Misc
@@ -173,7 +174,7 @@ namespace StarlightRiver.Content.Items.Misc
 						tries++;
 						if (tries > 4999)
 						{
-							Main.NewText("Sorcerwrench error: too many tries! Report to developers of Starlight River immediately!"); //TODO: Should this really print to a user?
+							Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Items.Sorcerwrench.4999Text")); //TODO: Should this really print to a user?
 							break;
 						}
 					}

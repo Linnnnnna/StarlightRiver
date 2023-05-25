@@ -3,6 +3,7 @@ using System.Linq;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 
 namespace StarlightRiver.Core
 {
@@ -13,7 +14,7 @@ namespace StarlightRiver.Core
 
 		private void TwistSwordGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Mounting weaponry";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.TwistSword");
 
 			int tries = 0;
 

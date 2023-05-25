@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.IO;
 using Terraria.WorldBuilding;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Core
@@ -12,7 +13,7 @@ namespace StarlightRiver.Core
 	{
 		private void BigTreeGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = "Planting the forest...";
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.BigTree");
 			for (int k = 60; k < Main.maxTilesX - 60; k++)
 			{
 				if (k > Main.maxTilesX / 3 && k < Main.maxTilesX / 3 * 2 && WorldGen.genRand.NextBool(9)) //inner part of the world

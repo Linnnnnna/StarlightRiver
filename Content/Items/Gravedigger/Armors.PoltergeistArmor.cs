@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Terraria.ID;
+using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace StarlightRiver.Content.Items.Gravedigger
@@ -53,10 +54,7 @@ namespace StarlightRiver.Content.Items.Gravedigger
 
 		public override void UpdateArmorSet(Player player)
 		{
-			player.setBonus =
-				"Double tap DOWN with a magic weapon to haunt or unhaunt it, or with an empty hand to unhaunt all\n" +
-				"Haunted weapons float around you and attack automatically, but decrease your max mana\n" +
-				"Haunted weapons become disinterested in non-magic users and can't be used while haunted";
+			player.setBonus = Language.GetTextValue("Mods.StarlightRiver.ArmorSetBonus.Poltergeist");
 
 			minions.RemoveAll(n => !n.active || n.type != ProjectileType<PoltergeistMinion>());
 
@@ -69,7 +67,7 @@ namespace StarlightRiver.Content.Items.Gravedigger
 			}
 
 			if (player == Main.LocalPlayer && sleepTimer == 1 && minions.Count > 0) //warning message
-				Main.NewText("Your haunted weapons seem bored...", new Color(200, 120, 255));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.PoltergeistBored"), new Color(200, 120, 255));
 
 			if (sleepTimer > 0) //decrement sleep timer
 				sleepTimer--;

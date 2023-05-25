@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Items.BaseTypes
 {
@@ -227,7 +228,7 @@ namespace StarlightRiver.Content.Items.BaseTypes
 
 					if (line.Name == "ItemName")
 					{
-						line.Text = line.Text.Insert(0, "Twice ");
+						line.Text = line.Text.Insert(0, Language.GetTextValue("Mods.StarlightRiver.Common.Twice"));
 						line.OverrideColor = RelicColor(k);
 					}
 
@@ -243,7 +244,7 @@ namespace StarlightRiver.Content.Items.BaseTypes
 						line.OverrideColor = RelicColorBad(k);
 				}
 
-				var newLine = new TooltipLine(Mod, "relicLine", "Cannot be reforged")
+				var newLine = new TooltipLine(Mod, "relicLine", Language.GetTextValue("Mods.StarlightRiver.Common.CannotReforg"))
 				{
 					OverrideColor = new Color(255, 180, 100)
 				};

@@ -8,6 +8,7 @@ using System;
 using System.Reflection;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Biomes
 {
@@ -161,7 +162,7 @@ namespace StarlightRiver.Content.Biomes
 		{
 			Main.graphics.GraphicsDevice.Clear(Color.Transparent);
 
-			Main.NewText("Drawing to target!");
+			Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Biomes.MoonstoneBiome.SomeText"));
 
 			sb.End();
 			sb.Begin(default, default, default, default, default, null, Main.GameViewMatrix.ZoomMatrix);

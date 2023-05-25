@@ -36,7 +36,7 @@ namespace StarlightRiver.Core.Systems.BlockerTileSystem
 		{
 			var instance = new Blocker(internalName, activeFunction);
 
-			StarlightRiver.Instance.AddContent(instance);
+			StarlightRiver.Instance.AddContent(instance);//TODO 这个需要翻译吗？
 			StarlightRiver.Instance.AddContent(new LoaderTileItem(internalName + "Item", internalName + "Item", "debug item", internalName, -1, "StarlightRiver/Assets/Default", true, 0));
 			blockers.Add(instance);
 		}
