@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria.DataStructures;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Tiles.Vitric.Temple.GearPuzzle
 {
@@ -12,7 +13,7 @@ namespace StarlightRiver.Content.Tiles.Vitric.Temple.GearPuzzle
 			if (Main.LocalPlayer.HeldItem.type == ModContent.ItemType<Items.DebugStick>())
 			{
 				GearPuzzleHandler.PuzzleOriginLocation = new Point16(i, j);
-				Main.NewText($"Origin gear at ({i}, {j}) designated as gear puzzle origin for this world!", new Color(255, 255, 0));
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.GearPuzzle", i, j), new Color(255, 255, 0));
 				return true;
 			}
 

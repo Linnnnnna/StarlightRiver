@@ -6,6 +6,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Tiles.Underground
 {
@@ -148,7 +149,7 @@ namespace StarlightRiver.Content.Tiles.Underground
 						for (int k = 0; k < 30; k++)
 							Dust.NewDustPerfect(Projectile.Center + new Vector2(0, -32), ModContent.DustType<Dusts.Glow>(), Vector2.One.RotatedByRandom(6.28f) * Main.rand.NextFloat(5), 0, new Color(255, 100, 100), 0.6f);
 
-						Main.NewText("Final time: " + Helpers.Helper.TicksToTime((int)Timer));
+						Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.FinalTime") + Helpers.Helper.TicksToTime((int)Timer));
 						State = 0;
 
 						Timer = 0;
@@ -373,7 +374,7 @@ namespace StarlightRiver.Content.Tiles.Underground
 				int i = Terraria.NPC.NewNPC(Projectile.GetSource_FromThis(), (int)Projectile.Center.X, (int)Projectile.Center.Y, (int)SpawnType);
 				NPC NPC = Main.npc[i];
 				NPC.alpha = 255;
-				NPC.GivenName = "Shadow";
+				NPC.GivenName = Language.GetTextValue("Mods.StarlightRiver.NPCs.Shadow");
 				NPC.lavaImmune = true;
 				NPC.trapImmune = true;
 				NPC.HitSound = SoundID.NPCHit7;

@@ -30,7 +30,7 @@ namespace StarlightRiver.Content.Tiles.MusicBox
 		}
 
 		private void LoadMusicBox(string name, string displayName, string path)
-		{
+		{//TODO 我不知道
 			Mod.AddContent(new MusicBoxItem(name + "Item", displayName, "", name, ItemRarityID.LightRed, AssetRoot + name + "Item", true));
 			Mod.AddContent(new LoaderFurniture(name, boxData, Mod.Find<ModItem>(name + "Item").Type, AssetRoot + name));
 

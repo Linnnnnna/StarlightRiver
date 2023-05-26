@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Tiles.Underground.EvasionShrineBullets
 {
@@ -59,7 +60,7 @@ namespace StarlightRiver.Content.Tiles.Underground.EvasionShrineBullets
 			parent.lives--;
 
 			if (Main.rand.NextBool(10000))
-				Main.NewText("Skill issue.");
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.SkillIssue"));
 		}
 
 		public override void PostDraw(Color lightColor)

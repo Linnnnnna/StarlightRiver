@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.ID;
+using Terraria.Localization;
 
 namespace StarlightRiver.Content.Tiles.Underground.EvasionShrineBullets
 {
@@ -79,7 +80,7 @@ namespace StarlightRiver.Content.Tiles.Underground.EvasionShrineBullets
 			parent.lives--;
 
 			if (Main.rand.NextBool(10000))
-				Main.NewText("Skill issue.");
+				Main.NewText(Language.GetTextValue("Mods.StarlightRiver.Common.SkillIssue"));
 		}
 
 		private Vector2 PointOnSpline(float progress)

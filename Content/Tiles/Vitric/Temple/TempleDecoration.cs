@@ -11,7 +11,7 @@ namespace StarlightRiver.Content.Tiles.Vitric.Temple
 		public override void Load()
 		{
 			//Todo dust
-
+			//TODO 我不知道
 			LoadFurniture("TempleChair", "Temple Chair",
 				new FurnitureLoadData(1, 2, 0, SoundID.Dig, false, new Color(140, 97, 86), false, false, "Chair", AnchorFloor(1), faceDirection: true));
 
