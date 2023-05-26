@@ -40,8 +40,8 @@ namespace StarlightRiver.Content.Abilities
 
 		internal void LoadDefaults()
 		{
-			Bind<Dash>(Language.GetTextValue("Mods.StarlightRiver.Keybinds.ForbiddenWinds.DisplayName"), "LeftShift");
-			Bind<Whip>(Language.GetTextValue("Mods.StarlightRiver.Keybinds.Faeflame.DisplayName"), "F");
+			Bind<Dash>(Language.GetTextValue("ForbiddenWinds"), "LeftShift");
+			Bind<Whip>(Language.GetTextValue("Faeflame"), "F");
 		}
 		internal void Unload()
 		{

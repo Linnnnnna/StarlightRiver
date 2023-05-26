@@ -5,102 +5,95 @@ Mods: {
 			Faeflame.DisplayName: Faeflame
 		}
 
-		Configs: {
-			AudioConfig: {
-				Label: Custom Inventory Sounds
-				Tooltip: If custom inventory sounds should play for all Items, select few, or none.
-			}
+		Configuration: {
+			AudioConfig: Custom Inventory Sounds
+			AudioConfigTooltip: If custom inventory sounds should play for all Items, select few, or none.
 
 			GraphicsConfig: {
-				Label: {
-					Screenshake: Screenshake
-					LightingBufferPollRate: Lighting Buffer Poll Rate
-					ScrollingLightingBufferBuilding: Scrolling Lighting Buffer Building
-					ExtraParticles: Extra Particles
-					HighQualityLitTextures: High quality lit textures
-					BackgroundReflections: Background Reflections
-				}
+				Screenshake: Screenshake
+				ScreenshakeTooltip: Modifies the intensity of screen shake effects
 
-				Tooltip: {
-					Screenshake: Modifies the intensity of screen shake effects
-					LightingBufferPollRate:
-						'''
-						Changes how often the lighting buffer polls for data.
-						Higher values increase performance but make lighting update slower on some objects.
-						Lower values result in smoother moving light but may hurt performance.
-						'''
-					ScrollingLightingBufferBuilding:
-						'''
-						Causes the lighting buffer to be built over its poll rate instead of all at once.
-						May help normalize lag spikes but cause strange lighting artifacts.
-						'''
-					ExtraParticles:
-						'''
-						Enables/Disables special particles.
-						Disable this if you have performance issues.
-						'''
-					HighQualityLitTextures:
-						'''
-						Enables/Disables fancy lighting on large textures.
-						Disable this if you have performance issues.
-						'''
-					BackgroundReflections:
-						'''
-						Configures what is rendered for background reflections.
-						Disable this if you have performance issues.
-						'''
-				}
+				LightingBufferPollRate: Lighting Buffer Poll Rate
+				LightingBufferPollRateTooltip:
+					'''
+					Changes how often the lighting buffer polls for data.
+					Higher values increase performance but make lighting update slower on some objects.
+					Lower values result in smoother moving light but may hurt performance.
+					'''
+
+				ScrollingLightingBufferBuilding: Scrolling Lighting Buffer Building
+				ScrollingLightingBufferBuildingTooltip:
+					'''
+					Causes the lighting buffer to be built over its poll rate instead of all at once.
+					May help normalize lag spikes but cause strange lighting artifacts.
+					'''
+
+				ExtraParticles: Extra Particles
+				ExtraParticlesTooltip:
+					'''
+					Enables/Disables special particles.
+					Disable this if you have performance issues.
+					'''
+
+				HighQualityLitTextures: High quality lit textures
+				HighQualityLitTexturesTooltip:
+					'''
+					Enables/Disables fancy lighting on large textures.
+					Disable this if you have performance issues.
+					'''
+
+				BackgroundReflections: Background Reflections
+				BackgroundReflectionsTooltip:
+					'''
+					Configures what is rendered for background reflections.
+					Disable this if you have performance issues.
+					'''
 			}
 
 			ReflectionSubConfig: {
-				Label: {
-					BackgroundReflections: Background Reflections
-					ReflectPlayers: Reflect Players
-					ReflectNPCs: Reflect NPCs
-					ReflectProjectiles: Reflect Projectiles
-					ReflectParticles: ReflectParticles
-				}
+				BackgroundReflections: Background Reflections
+				BackgroundReflectionsTooltip:
+					'''
+					This will Enable/Disable the background reflections system entirely.
+					If this is off, the other settings in this block are ignored.
+					Disable this if you have performance issues.
+					'''
 
-				Tooltip: {
-					BackgroundReflections:
-						'''
-						This will Enable/Disable the background reflections system entirely.
-						If this is off, the other settings in this block are ignored.
-						Disable this if you have performance issues.
-						'''
-					ReflectPlayers:
-						'''
-						This will Enable/Disable reflecting Players.
-						low performance impact.
-						'''
-					ReflectNPCs:
-						'''
-						This will Enable/Disable reflecting NPCs.
-						low performance impact.
-						'''
-					ReflectProjectiles:
-						'''
-						This will Enable/Disable reflecting Projectiles.
-						high performance impact.
-						'''
-					ReflectParticles:
-						'''
-						This will Enable/Disable reflecting Particles, gores and dusts.
-						high performance impact.
-						'''
-				}
+				ReflectPlayers: Reflect Players
+				ReflectPlayersTooltip:
+					'''
+					This will Enable/Disable reflecting Players.
+					low performance impact.
+					'''
+
+				ReflectNPCs: Reflect NPCs
+				ReflectNPCsTooltip:
+					'''
+					This will Enable/Disable reflecting NPCs.
+					low performance impact.
+					'''
+
+				ReflectProjectiles: Reflect Projectiles
+				ReflectProjectilesTooltip:
+					'''
+					This will Enable/Disable reflecting Projectiles.
+					high performance impact.
+					'''
+
+				ReflectParticles: ReflectParticles
+				ReflectParticlesTooltip:
+					'''
+					This will Enable/Disable reflecting Particles, gores and dusts.
+					high performance impact.
+					'''
 			}
 
 			GUIConfig: {
-				Label: {
-					OverheadStaminaDisplay: Overhead Stamina Display
-					KeywordStyle: Keyword Style
-				}
+				OverheadStaminaDisplay: Overhead Stamina Display
+				OverheadStaminaDisplayTooltip: When/If the overhead stamina meter should display
 
-				Tooltip: {
-					OverheadStaminaDisplay: When/If the overhead stamina meter should display
-					KeywordStyle: How keywords should be displayed in tooltips
-				}
+				KeywordStyle: Keyword Style
+				KeywordStyleTooltip: How keywords should be displayed in tooltips
 			}
 
 			OverlayState: {

@@ -23,16 +23,16 @@ namespace StarlightRiver.Content.Configs
 	public class GUIConfig : ModConfig
 	{
 		public override ConfigScope Mode => ConfigScope.ClientSide;
-//TODO 无法正常显示
-		[Label("$Mods.StarlightRiver.Configs.GUIConfig.Label.OverheadStaminaDisplay")]
+//TODO 文本无法正常显示
+		[Label("$Mods.StarlightRiver.Configs.GUIConfig.OverheadStaminaDisplay")]
 		[DrawTicks]
-		[Tooltip("$Mods.StarlightRiver.Configs.GUIConfig.Tooltip.OverheadStaminaDisplay")]
+		[Tooltip("$Mods.StarlightRiver.Configs.GUIConfig.OverheadStaminaDisplayTooltip")]
 		[DefaultValue(typeof(OverlayState), "WhileNotFull")]
 		public OverlayState OverheadStaminaState = OverlayState.WhileNotFull;
 
-		[Label("$Mods.StarlightRiver.Configs.GUIConfig.Label.KeywordStyle")]
+		[Label("$Mods.StarlightRiver.Configs.GUIConfig.KeywordStyle")]
 		[DrawTicks]
-		[Tooltip("$Mods.StarlightRiver.Configs.GUIConfig.Tooltip.KeywordStyle")]
+		[Tooltip("$Mods.StarlightRiver.Configs.GUIConfig.KeywordStyleTooltip")]
 		public KeywordStyle KeywordStyle = KeywordStyle.Both;
 	}
 }
