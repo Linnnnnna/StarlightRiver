@@ -14,10 +14,10 @@ namespace StarlightRiver.Content.Configs
 	public class AudioConfig : ModConfig
 	{
 		public override ConfigScope Mode => ConfigScope.ClientSide;
-//TODO 文本无法正常显示
-		[Label("$Mods.StarlightRiver.Configuration.AudioConfig")]
+
+		[LabelKey("$Mods.StarlightRiver.Configuration.AudioConfig")]
 		[DrawTicks]
-		[Tooltip("$Mods.StarlightRiver.Configuration.AudioConfigTooltip")]
+		[TooltipKey("$Mods.StarlightRiver.Configuration.AudioConfigTooltip")]
 		[DefaultValue(typeof(CustomSounds), "All")]
 		public CustomSounds InvSounds = CustomSounds.All;
 	}
