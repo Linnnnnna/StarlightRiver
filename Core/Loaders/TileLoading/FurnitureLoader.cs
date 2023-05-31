@@ -30,7 +30,7 @@ namespace StarlightRiver.Core.Loaders.TileLoading
 			this.material = material;
 		}
 
-		public void Load()//TODO 我不知道
+		public void Load()
 		{
 			StarlightRiver Mod = StarlightRiver.Instance;
 
