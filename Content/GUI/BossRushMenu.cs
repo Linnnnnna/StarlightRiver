@@ -22,7 +22,7 @@ namespace StarlightRiver.Content.GUI
 
 		public override void OnInitialize()
 		{
-			button = new UIText(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush"));//TODO 修复文本
+			button = new UIText(Language.GetText("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush"));
 			button.Left.Set(360, 0.5f);
 			button.Top.Set(240, 0);
 			button.Width.Set(100, 0);
@@ -55,19 +55,19 @@ namespace StarlightRiver.Content.GUI
 			return 0;
 		}
 
-		public override void OnInitialize() //TODO 修复文本
+		public override void OnInitialize()
 		{
-			var normal = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Normal.Description"), 0);
+			var normal = new BossRushChoice("Mods.StarlightRiver.Common.GUI.BossRushText.BossRush", "Mods.StarlightRiver.Common.GUI.BossRushText.Normal.Description", 0);
 			normal.Left.Set(-150, 0.25f);
 			normal.Top.Set(-300, 0.5f);
 			Append(normal);
 
-			var expert = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Name"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Description"), 1);
+			var expert = new BossRushChoice("Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Name", "Mods.StarlightRiver.Common.GUI.BossRushText.Expert.Description", 1);
 			expert.Left.Set(-150, 0.5f);
 			expert.Top.Set(-300, 0.5f);
 			Append(expert);
 
-			var master = new BossRushChoice(Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Name"), Language.GetTextValue("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Description"), 2);
+			var master = new BossRushChoice("Mods.StarlightRiver.Common.GUI.BossRushText.Master.Name", "Mods.StarlightRiver.Common.GUI.BossRushText.Master.Description", 2);
 			master.Left.Set(-150, 0.75f);
 			master.Top.Set(-300, 0.5f);
 			Append(master);
@@ -76,6 +76,8 @@ namespace StarlightRiver.Content.GUI
 
 	internal class BossRushChoice : UIElement
 	{
+		public bool initialized;
+
 		public string name;
 
 		public string rules;
@@ -94,6 +96,13 @@ namespace StarlightRiver.Content.GUI
 
 		public override void Draw(SpriteBatch spriteBatch)
 		{
+			if (!initialized)
+			{
+				name = Language.GetTextValue(name);
+				rules = Language.GetTextValue(rules);
+				initialized = true;
+			}
+
 			CalculatedStyle dims = GetDimensions();
 			Vector2 pos = dims.Position();
 
