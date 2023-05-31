@@ -15,7 +15,7 @@ namespace StarlightRiver.Core
 	{
 		private void ForestHerbGen(GenerationProgress progress, GameConfiguration configuration)
 		{
-			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.ForestHer");
+			progress.Message = Language.GetTextValue("Mods.StarlightRiver.WorldGeneration.ForestHerb");
 			for (int k = 60; k < Main.maxTilesX - 60; k++)
 			{
 				if (k > Main.maxTilesX / 3 && k < Main.maxTilesX / 3 * 2) //inner part of the world

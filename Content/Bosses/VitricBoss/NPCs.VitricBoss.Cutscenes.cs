@@ -470,7 +470,7 @@ namespace StarlightRiver.Content.Bosses.VitricBoss
 
 				foreach (Player Player in Main.player.Where(n => n.active && arena.Contains(n.Center.ToPoint())))
 				{
-					Player.GetModPlayer<MedalPlayer>().ProbeMedal("Ceiros");
+					Player.GetModPlayer<MedalPlayer>().ProbeMedal("VitricBoss");
 				}
 
 				Vignette.visible = false;

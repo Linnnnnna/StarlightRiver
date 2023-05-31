@@ -30,12 +30,15 @@ namespace StarlightRiver.Core
 
 		public void QualifyForMedal(string name, float order)
 		{
+			name = Language.GetTextValue($"Mods.StarlightRiver.NPCs.{name}.DisplayName");
 			var medal = new Medal(name, Difficulty, order);
 			QualifyForMedal(medal);
 		}
 
 		public void ProbeMedal(string name)
 		{
+			name = Language.GetTextValue($"Mods.StarlightRiver.NPCs.{name}.DisplayName");
+
 			var medal = new Medal(name, Difficulty, attemptedMedal.order);
 
 			if (attemptedMedal.Equals(medal) && !medals.Any(n => n.name == medal.name && n.difficulty >= medal.difficulty))
@@ -158,8 +161,14 @@ namespace StarlightRiver.Core
 		}
 
 		public override string ToString()
-		{//TODO 我不知道
-			return name + ": " + (difficulty == 0 ? "Normal" : difficulty == 1 ? "Expert" : difficulty == -1 ? "Journey" : "Master");
+		{
+			return difficulty switch
+			{
+				0 => name + ": " + Language.GetTextValue("UI.Normal"),
+				1 => name + ": " + Language.GetTextValue("UI.Expert"),
+				-1 => name + ": " + Language.GetTextValue("UI.Creative"),
+				_ => name + ": " + Language.GetTextValue("UI.Master")
+			};
 		}
 
 		public override bool Equals(object obj)

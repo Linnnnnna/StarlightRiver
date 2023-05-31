@@ -176,7 +176,7 @@ namespace StarlightRiver.Content.Bosses.SquidBoss
 				Player Player = Main.player[k];
 
 				if (Player.active && StarlightWorld.squidBossArena.Contains((Player.Center / 16).ToPoint()))
-					Player.GetModPlayer<MedalPlayer>().ProbeMedal("Auroracle");
+					Player.GetModPlayer<MedalPlayer>().ProbeMedal("SquidBoss");
 			}
 
 			StarlightWorld.Flag(WorldFlags.SquidBossDowned);
@@ -482,7 +482,7 @@ namespace StarlightRiver.Content.Bosses.SquidBoss
 					Player Player = Main.player[k];
 
 					if (Player.active && StarlightWorld.squidBossArena.Contains((Player.Center / 16).ToPoint()))
-						Player.GetModPlayer<MedalPlayer>().QualifyForMedal("Auroracle", 0);
+						Player.GetModPlayer<MedalPlayer>().QualifyForMedal("SquidBoss", 0);
 				}
 
 				BossBarOverlay.SetTracked(NPC, ", The Venerated", Request<Texture2D>(AssetDirectory.GUI + "BossBarFrame").Value);

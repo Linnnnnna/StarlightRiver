@@ -345,7 +345,7 @@ namespace StarlightRiver.Content.Bosses.VitricBoss
 
 			foreach (Player Player in Main.player.Where(n => n.active && arena.Contains(n.Center.ToPoint())))
 			{
-				Player.GetModPlayer<MedalPlayer>().ProbeMedal("Ceiros");
+				Player.GetModPlayer<MedalPlayer>().ProbeMedal("VitricBoss");
 			}
 
 			body.SpawnGores2();
@@ -540,7 +540,7 @@ namespace StarlightRiver.Content.Bosses.VitricBoss
 
 					foreach (Player Player in Main.player.Where(n => n.active && arena.Contains(n.Center.ToPoint())))
 					{
-						Player.GetModPlayer<MedalPlayer>().QualifyForMedal("Ceiros", 1);
+						Player.GetModPlayer<MedalPlayer>().QualifyForMedal("VitricBoss", 1);
 					}
 
 					ChangePhase(AIStates.SpawnAnimation, true);
