@@ -485,7 +485,7 @@ namespace StarlightRiver.Content.Bosses.SquidBoss
 						Player.GetModPlayer<MedalPlayer>().QualifyForMedal("SquidBoss", 0);
 				}
 
-				BossBarOverlay.SetTracked(NPC, ", The Venerated", Request<Texture2D>(AssetDirectory.GUI + "BossBarFrame").Value);
+				BossBarOverlay.SetTracked(NPC, Language.GetTextValue("Mods.StarlightRiver.NPCs.SquidBoss.AppendedNickNameOnBossBar"), Request<Texture2D>(AssetDirectory.GUI + "BossBarFrame").Value);
 			}
 
 			if (Phase == (int)AIStates.SpawnAnimation)

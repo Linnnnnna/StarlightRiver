@@ -24,7 +24,7 @@ namespace StarlightRiver.Content.GUI
 			animationTimer++;
 
 			var pos = new Vector2(Main.screenWidth / 2, Main.screenHeight / 2 - 120);
-			string message = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsTo") + (animationTimer < 60 ? (deaths - 1) : deaths);
+			string message = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsTo", name) + (animationTimer < 60 ? (deaths - 1) : deaths);
 
 			Color color = new Color(255, 100, 100) * (animationTimer > 420 ? 1 - (animationTimer - 420) / 60f : 1);
 

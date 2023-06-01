@@ -10,6 +10,7 @@ using Terraria.Audio;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 
@@ -519,7 +520,7 @@ namespace StarlightRiver.Content.Bosses.VitricBoss
 			if (!BossBarOverlay.visible && Phase != (int)AIStates.Leaving && Phase != (int)AIStates.Dying && Main.netMode != NetmodeID.Server && arena.Contains(Main.LocalPlayer.Center.ToPoint()))
 			{
 				//in case the player joined late or something for the hp bar
-				BossBarOverlay.SetTracked(NPC, ", Shattered Sentinel", Request<Texture2D>(AssetDirectory.VitricBoss + "GUI/HealthBar", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
+				BossBarOverlay.SetTracked(NPC, Language.GetTextValue("Mods.StarlightRiver.NPCs.VitricBoss.AppendedNickNameOnBossBar"), Request<Texture2D>(AssetDirectory.VitricBoss + "GUI/HealthBar", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
 				BossBarOverlay.visible = true;
 			}
 

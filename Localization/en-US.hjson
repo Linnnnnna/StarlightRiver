@@ -4175,6 +4175,7 @@ Mods: {
 				DisplayName: Auroracle
 				NickName: The Venerated
 				NickName2: Jammed Mod
+				AppendedNickNameOnBossBar: ", The Venerated"
 			}
 
 			ArenaBottom.DisplayName: ""
@@ -4185,6 +4186,7 @@ Mods: {
 				DisplayName: Ceiros
 				NickName: Shattered Sentinel
 				NickName2: Glass tax returns
+				AppendedNickNameOnBossBar: ", Shattered Sentinel"
 			}
 
 			VitricBossCrystal.DisplayName: Resonant Crystal
