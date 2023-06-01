@@ -15,7 +15,7 @@ namespace StarlightRiver.Content.GUI
 	{
 		private Item BigItem = new();
 		internal Item[] Selections = new Item[2];
-		internal List<string> Quotes;
+		internal List<LocalizedText> Quotes;
 		private int QuoteID;
 
 		public override int InsertionIndex(List<GameInterfaceLayer> layers)
@@ -25,19 +25,18 @@ namespace StarlightRiver.Content.GUI
 
 		public override void OnInitialize()
 		{
-			Quotes = new List<string>() //TODO somthing with localization 修复文本问题
-            {
-				Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.LootQuotes.{Quotes}")
-				//"Loot?",
-				//"Loot!",
-				//"Shiny treasures!",
-				//"Shinies!",
-				//"Treasure!",
-				//"For your troubles...",
-				//"This looks valuable...",
-				//"Not a mimic!",
-				//"Shiny!"
-			};
+			Quotes = new List<LocalizedText>();
+			for (int i = 0; i <= 8; i++)
+			 	Quotes.Add(Language.GetText($"Mods.StarlightRiver.Common.GUI.LootUI.LootQuotes.{i}"));
+			//"Loot?",
+			//"Loot!",
+			//"Shiny treasures!",
+			//"Shinies!",
+			//"Treasure!",
+			//"For your troubles...",
+			//"This looks valuable...",
+			//"Not a mimic!",
+			//"Shiny!"
 		}
 
 		public override void SafeUpdate(GameTime gameTime)
@@ -70,7 +69,7 @@ namespace StarlightRiver.Content.GUI
 
 			Texture2D tex = Request<Texture2D>("StarlightRiver/Assets/GUI/LootSlotOn").Value;
 
-			Utils.DrawBorderStringBig(spriteBatch, Quotes[QuoteID], GetDimensions().Center() + new Vector2(0, -80) - 1.5f * Terraria.GameContent.FontAssets.ItemStack.Value.MeasureString(Quotes[QuoteID]) / 2, Color.White, 0.5f);
+			Utils.DrawBorderStringBig(spriteBatch, Quotes[QuoteID].Value, GetDimensions().Center() + new Vector2(0, -80) - 1.5f * Terraria.GameContent.FontAssets.ItemStack.Value.MeasureString(Quotes[QuoteID].Value) / 2, Color.White, 0.5f);
 
 			string str = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.Get");
 			string str2 = Language.GetTextValue("Mods.StarlightRiver.Common.GUI.LootUI.Pick");

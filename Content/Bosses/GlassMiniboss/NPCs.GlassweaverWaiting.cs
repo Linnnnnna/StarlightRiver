@@ -94,13 +94,8 @@ namespace StarlightRiver.Content.Bosses.GlassMiniboss
 		private string GetIntroDialogue()
 		{
 			return TextState switch
-			{
-				0 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.0"),
-				1 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.1"),
-				2 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.2"),
-				3 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.3"),
-				4 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.4"),
-				5 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.5"),
+			{ 
+				>= 0 and <=5 => Language.GetTextValue($"Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.{(int)TextState}"),
 				_ => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetIntroDialogue.6"),
 			};
 		}
@@ -112,11 +107,10 @@ namespace StarlightRiver.Content.Bosses.GlassMiniboss
 
 		private string GetWaitingDialogue()
 		{
-			return Main.rand.Next(3) switch
+			int i = Main.rand.Next(3);
+			return i switch
 			{
-				0 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWaitingDialogue.0"),
-				1 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWaitingDialogue.1"),
-				2 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWaitingDialogue.2"),
+				>= 0 and <= 2=> Language.GetTextValue($"Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWaitingDialogue.{i}"),
 				_ => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWaitingDialogue.3"),
 			};
 		}
@@ -125,22 +119,17 @@ namespace StarlightRiver.Content.Bosses.GlassMiniboss
 		{
 			return TextState switch
 			{
-				0 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.0"),
-				1 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.1"),
-				2 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.2"),
-				3 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.3"),
-				4 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.4"),
+				>= 0 and <= 4 => Language.GetTextValue($"Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.{(int)TextState}"),
 				_ => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetWinDialogue.5"),
 			};
 		}
 
 		private string GetKeyDialogue()
 		{
-			return Main.rand.Next(3) switch
+			int i = Main.rand.Next(3);
+			return i switch
 			{
-				0 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetKeyDialogue.0"),
-				1 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetKeyDialogue.1"),
-				2 => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetKeyDialogue.2"),
+				>= 0 and <= 2 => Language.GetTextValue($"Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetKeyDialogue.{i}"),
 				_ => Language.GetTextValue("Mods.StarlightRiver.NPCs.GlassweaverWaiting.GetKeyDialogue.3"),
 			};
 		}

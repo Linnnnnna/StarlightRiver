@@ -1,4 +1,5 @@
 ﻿using StarlightRiver.Core.Loaders.UILoading;
+using System;
 using System.Collections.Generic;
 using Terraria.UI;
 using Terraria.Localization;
@@ -49,24 +50,11 @@ namespace StarlightRiver.Content.GUI
 			tease = "";
 
 			if (deaths % 10 == 0)
-			{//TODO 精简代码
-				tease = Main.rand.Next(14) switch 
+			{
+				int i = Main.rand.Next(14);
+				tease = i switch 
 				{
-					0 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.0"),
-					1 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.1"),
-					2 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.2"),
-					3 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.3"),
-					4 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.4"),
-					5 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.5"),
-					6 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.6"),
-					7 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.7"),
-					8 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.8"),
-					9 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.9"),
-					10 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.10"),
-					11 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.11"),
-					12 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.12"),
-					13 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.13"),
-					14 => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.14"),
+					>= 0 and <= 14 => Language.GetTextValue($"Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.{i}"),
 					_ => Language.GetTextValue("Mods.StarlightRiver.Common.GUI.MasterDeathTicker.DeathsText.15"),
 				};
 			}
