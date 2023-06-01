@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
-using Terraria.Localization;
 
 namespace StarlightRiver.Content.Configs
 {
@@ -24,15 +23,15 @@ namespace StarlightRiver.Content.Configs
 	{
 		public override ConfigScope Mode => ConfigScope.ClientSide;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GUIConfig.OverheadStaminaDisplay")]
+		//[Label("Overhead Stamina Display")]
 		[DrawTicks]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GUIConfig.OverheadStaminaDisplayTooltip")]
+		//[Tooltip("When/If the overhead stamina meter should display")]
 		[DefaultValue(typeof(OverlayState), "WhileNotFull")]
 		public OverlayState OverheadStaminaState = OverlayState.WhileNotFull;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GUIConfig.KeywordStyle")]
+		//[Label("Keyword Style")]
 		[DrawTicks]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GUIConfig.KeywordStyleTooltip")]
+		//[Tooltip("How keywords should be displayed in tooltips")]
 		public KeywordStyle KeywordStyle = KeywordStyle.Both;
 	}
 }

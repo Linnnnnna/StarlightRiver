@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
-using Terraria.Localization;
 
 namespace StarlightRiver.Content.Configs
 {
@@ -8,65 +7,65 @@ namespace StarlightRiver.Content.Configs
 	{
 		public override ConfigScope Mode => ConfigScope.ClientSide;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.Screenshake")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.ScreenshakeTooltip")]
+		//[Label("Screenshake")]
+		//[Tooltip("Modifies the intensity of screen shake effects")]
 		[Range(0, 1)]
 		[Slider]
 		[DefaultValue(1f)]
 		public float ScreenshakeMult = 1;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.LightingBufferPollRate")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.LightingBufferPollRateTooltip")]
+		//[Label("Lighting Buffer Poll Rate")]
+		//[Tooltip("Changes how often the lighting buffer polls for data. \nHigher values increase performance but make lighting update slower on some objects. \nLower values result in smoother moving light but may hurt performance.")]
 		[Range(1, 30)]
 		[DrawTicks]
 		[Slider]
 		[DefaultValue(5f)]
 		public int LightingPollRate = 5;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.ScrollingLightingBufferBuilding")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.ScrollingLightingBufferBuildingTooltip")]
+		//[Label("Scrolling Lighting Buffer Building")]
+		//[Tooltip("Causes the lighting buffer to be built over its poll rate instead of all at once. \nMay help normalize lag spikes but cause strange lighting artifacts.")]
 		[DefaultValue(false)]
 		public bool ScrollingLightingPoll = false;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.ExtraParticles")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.ExtraParticlesTooltip")]
+		//[Label("Extra Particles")]
+		//[Tooltip("Enables/Disables special particles. \nDisable this if you have performance issues.")]
 		[DefaultValue(true)]
 		public bool ParticlesActive = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.HighQualityLitTextures")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.HighQualityLitTexturesTooltip")]
+		//[Label("High quality lit textures")]
+		//[Tooltip("Enables/Disables fancy lighting on large textures. \nDisable this if you have performance issues.")]
 		[DefaultValue(true)]
 		public bool HighQualityLighting = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.GraphicsConfig.BackgroundReflections")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.GraphicsConfig.BackgroundReflectionsTooltip")]
+		//[Label("Background Reflections")]
+		//[Tooltip("Configures what is rendered for background reflections. \nDisable this if you have performance issues.")]
 		public ReflectionSubConfig ReflectionConfig = new();
 	}
 
 	public class ReflectionSubConfig
 	{
-		[LabelKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.BackgroundReflections")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.BackgroundReflectionsTooltip")]
+		//[Label("Background Reflections")]
+		//[Tooltip("This will Enable/Disable the background reflections system entirely. \nIf this is off, the other settings in this block are ignored. \nDisable this if you have performance issues.")]
 		[DefaultValue(true)]
 		public bool ReflectionsOn = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectPlayers")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectPlayersTooltip")]
+		//[Label("Reflect Players")]
+		//[Tooltip("This will Enable/Disable reflecting Players.\n low performance impact.")]
 		[DefaultValue(true)]
 		public bool PlayerReflectionsOn = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectNPCs")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectNPCsTooltip")]
+		//[Label("Reflect NPCs")]
+		//[Tooltip("This will Enable/Disable reflecting NPCs.\n low performance impact.")]
 		[DefaultValue(true)]
 		public bool NpcReflectionsOn = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectProjectiles")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectProjectilesTooltip")]
+		//[Label("Reflect Projectiles")]
+		//[Tooltip("This will Enable/Disable reflecting Projectiles.\n high performance impact.")]
 		[DefaultValue(true)]
 		public bool ProjReflectionsOn = true;
 
-		[LabelKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectParticles")]
-		[TooltipKey("$Mods.StarlightRiver.Configs.ReflectionSubConfig.ReflectParticlesTooltip")]
+		//[Label("Reflect Particles")]
+		//[Tooltip("This will Enable/Disable reflecting Particles, gores and dusts.\n high performance impact.")]
 		[DefaultValue(true)]
 		public bool DustReflectionsOn = true;
 

@@ -12,7 +12,6 @@ Mods: {
 			GraphicsConfig: {
 				Screenshake: Screenshake
 				ScreenshakeTooltip: Modifies the intensity of screen shake effects
-
 				LightingBufferPollRate: Lighting Buffer Poll Rate
 				LightingBufferPollRateTooltip:
 					'''
@@ -20,28 +19,24 @@ Mods: {
 					Higher values increase performance but make lighting update slower on some objects.
 					Lower values result in smoother moving light but may hurt performance.
 					'''
-
 				ScrollingLightingBufferBuilding: Scrolling Lighting Buffer Building
 				ScrollingLightingBufferBuildingTooltip:
 					'''
 					Causes the lighting buffer to be built over its poll rate instead of all at once.
 					May help normalize lag spikes but cause strange lighting artifacts.
 					'''
-
 				ExtraParticles: Extra Particles
 				ExtraParticlesTooltip:
 					'''
 					Enables/Disables special particles.
 					Disable this if you have performance issues.
 					'''
-
 				HighQualityLitTextures: High quality lit textures
 				HighQualityLitTexturesTooltip:
 					'''
 					Enables/Disables fancy lighting on large textures.
 					Disable this if you have performance issues.
 					'''
-
 				BackgroundReflections: Background Reflections
 				BackgroundReflectionsTooltip:
 					'''
@@ -58,28 +53,24 @@ Mods: {
 					If this is off, the other settings in this block are ignored.
 					Disable this if you have performance issues.
 					'''
-
 				ReflectPlayers: Reflect Players
 				ReflectPlayersTooltip:
 					'''
 					This will Enable/Disable reflecting Players.
 					low performance impact.
 					'''
-
 				ReflectNPCs: Reflect NPCs
 				ReflectNPCsTooltip:
 					'''
 					This will Enable/Disable reflecting NPCs.
 					low performance impact.
 					'''
-
 				ReflectProjectiles: Reflect Projectiles
 				ReflectProjectilesTooltip:
 					'''
 					This will Enable/Disable reflecting Projectiles.
 					high performance impact.
 					'''
-
 				ReflectParticles: ReflectParticles
 				ReflectParticlesTooltip:
 					'''
@@ -91,7 +82,6 @@ Mods: {
 			GUIConfig: {
 				OverheadStaminaDisplay: Overhead Stamina Display
 				OverheadStaminaDisplayTooltip: When/If the overhead stamina meter should display
-
 				KeywordStyle: Keyword Style
 				KeywordStyleTooltip: How keywords should be displayed in tooltips
 			}
@@ -152,7 +142,7 @@ Mods: {
 				'''
 			SkillIssue: Skill issue.
 			FinalTime: "Final time: "
-			GearPuzzle: "Origin gear at ({0}, {1}) designated as gear puzzle origin for this world!"
+			GearPuzzle: Origin gear at ({0}, {1}) designated as gear puzzle origin for this world!
 
 			Ingredient: {
 				IngredientTypeMainDescription: Main Course
@@ -4094,6 +4084,7 @@ Mods: {
 
 		NPCs: {
 			Shadow: Shadow
+
 			Glassweaver: {
 				DisplayName: Glassweaver
 				NickName: Worker of the Anvil
@@ -4833,6 +4824,159 @@ Mods: {
 			VitricGlass: Melting Glass
 			PermaFrost: Permafrost generation
 			Surface: Placing treasures
+		}
+
+		Configs: {
+			AudioConfig: {
+				DisplayName: Audio Config
+
+				InvSounds: {
+					Label: Custom Inventory Sounds
+					Tooltip: If custom inventory sounds should play for all Items, select few, or none.
+				}
+			}
+
+			CustomSounds: {
+				Tooltip: ""
+				All.Label: All
+				Specific.Label: Specific
+				None.Label: None
+			}
+
+			GraphicsConfig: {
+				DisplayName: Graphics Config
+
+				ScreenshakeMult: {
+					Label: Screenshake
+					Tooltip: Modifies the intensity of screen shake effects
+				}
+
+				LightingPollRate: {
+					Label: Lighting Buffer Poll Rate
+					Tooltip:
+						'''
+						Changes how often the lighting buffer polls for data. 
+						Higher values increase performance but make lighting update slower on some objects. 
+						Lower values result in smoother moving light but may hurt performance.
+						'''
+				}
+
+				ScrollingLightingPoll: {
+					Label: Scrolling Lighting Buffer Building
+					Tooltip:
+						'''
+						Causes the lighting buffer to be built over its poll rate instead of all at once. 
+						May help normalize lag spikes but cause strange lighting artifacts.
+						'''
+				}
+
+				ParticlesActive: {
+					Label: Extra Particles
+					Tooltip:
+						'''
+						Enables/Disables special particles. 
+						Disable this if you have performance issues.
+						'''
+				}
+
+				HighQualityLighting: {
+					Label: High quality lit textures
+					Tooltip:
+						'''
+						Enables/Disables fancy lighting on large textures. 
+						Disable this if you have performance issues.
+						'''
+				}
+
+				ReflectionConfig: {
+					Label: Background Reflections
+					Tooltip:
+						'''
+						Configures what is rendered for background reflections. 
+						Disable this if you have performance issues.
+						'''
+				}
+			}
+
+			ReflectionSubConfig: {
+				Tooltip: ""
+
+				ReflectionsOn: {
+					Label: Background Reflections
+					Tooltip:
+						'''
+						This will Enable/Disable the background reflections system entirely. 
+						If this is off, the other settings in this block are ignored. 
+						Disable this if you have performance issues.
+						'''
+				}
+
+				PlayerReflectionsOn: {
+					Label: Reflect Players
+					Tooltip:
+						'''
+						This will Enable/Disable reflecting Players.
+						 low performance impact.
+						'''
+				}
+
+				NpcReflectionsOn: {
+					Label: Reflect NPCs
+					Tooltip:
+						'''
+						This will Enable/Disable reflecting NPCs.
+						 low performance impact.
+						'''
+				}
+
+				ProjReflectionsOn: {
+					Label: Reflect Projectiles
+					Tooltip:
+						'''
+						This will Enable/Disable reflecting Projectiles.
+						 high performance impact.
+						'''
+				}
+
+				DustReflectionsOn: {
+					Label: Reflect Particles
+					Tooltip:
+						'''
+						This will Enable/Disable reflecting Particles, gores and dusts.
+						 high performance impact.
+						'''
+				}
+			}
+
+			GUIConfig: {
+				DisplayName: G U I Config
+
+				OverheadStaminaState: {
+					Label: Overhead Stamina Display
+					Tooltip: When/If the overhead stamina meter should display
+				}
+
+				KeywordStyle: {
+					Label: Keyword Style
+					Tooltip: How keywords should be displayed in tooltips
+				}
+			}
+
+			OverlayState: {
+				Tooltip: ""
+				AlwaysOn.Label: Always On
+				WhileNotFull.Label: While Not Full
+				WhileUsing.Label: While Using
+				Never.Label: Never
+			}
+
+			KeywordStyle: {
+				Tooltip: ""
+				Colors.Label: Colors
+				Brackets.Label: Brackets
+				Both.Label: Both
+				Neither.Label: Neither
+			}
 		}
 	}
 }

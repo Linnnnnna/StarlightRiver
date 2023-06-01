@@ -9,7 +9,7 @@ namespace StarlightRiver.Core.RecipeGroups
 		{
 			//todo add translation for Gemstone
 			//todo possibly add mod compat
-			var group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + "Gemstone", new int[]
+			var group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Language.GetTextValue("Mods.StarlightRiver.Common.RecipeGroup.Gemstone"), new int[]
 			{
 				ItemID.Topaz,
 				ItemID.Amethyst,
